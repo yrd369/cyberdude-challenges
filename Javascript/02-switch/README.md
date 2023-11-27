@@ -73,6 +73,8 @@ switch (number) {
 
 Deploy it and put the link here.
 
+[AnbuSelvan](https://github.com/anburocky3)
+
 ## References:
 
-https://www.youtube.com/watch?v=xG5IUyZvbDk&list=PL73Obo20O_7ihsIM5K-hHYPrcqkkdQcLa&index=29
+[JavaScript Switch case](https://www.youtube.com/watch?v=xG5IUyZvbDk&list=PL73Obo20O_7ihsIM5K-hHYPrcqkkdQcLa&index=29)
