@@ -1,11 +1,11 @@
-// Reference array CRUD
-const people = [
+// Reference Array CRUD
+let people = [
   {
     id: 1,
     personName: "Yogha Raj Dhayal",
     lastName: "Namburajan",
     hobbies: ["Travelling", "Practising Yoga"],
-    age: 21,
+    age: 22,
   },
   {
     id: 2,
@@ -29,25 +29,23 @@ const people = [
     age: 25,
   },
   {
-    id: 3,
+    id: 5,
     personName: "Muthu",
     lastName: "Kumari",
-    hobbies: ["Reading Books", "Listening Songs"],
-    age: 23,
+    hobbies: ["Creating Novels", "Riding bike"],
+    age: 21,
   },
 ];
 
-// creating an object in array
-
+// Creating an object in array
 function createPerson(id, personName, lastName) {
   return { id, personName, lastName };
 }
+const Sweety = createPerson(4, "Bearcin", "Sweety");
+const Muthu = createPerson(5, "Muthu", "Akalya");
+people.push(Sweety, Muthu);
 
-const val = createPerson(4, "abi", "rami");
-const val2 = createPerson(5, "muthu", "akalya");
-people.push(val, val2);
-
-// reading an object in array
+// Reading an object in array
 const userInput = prompt("Type your name");
 const personfinded = people.find((val) => {
   return val.personName === userInput;
@@ -60,44 +58,58 @@ Hobbies : He has interest in ${personfinded.hobbies}`);
   alert(`You are not registered User`);
 }
 
-// deleting
-let findedPersons = people.filter((result) => {
-  return result.age <= 21;
-});
-console.log(findedPersons);
-console.log(people);
-// // Primitive Array
-//  const input = prompt(`What do you want ?`);
-//  const inputFirstLetter = input.slice(0,1).toUpperCase();
-//  const remainingLetters = input.slice(1).toLowerCase();
-//  const finalInput = inputFirstLetter.concat(remainingLetters);
-// const fruits = ["Apple", "Orange", "Banana", "Grapes"];
-// // creating instance in fruits
-// fruits.push("Mango");
+// Updating
+function updateAge(nameOfPerson, newAge) {
+  const personToUpdate = people.find((val) => {
+    return val.personName === nameOfPerson;
+  });
+  if (personToUpdate) {
+    personToUpdate.age = newAge;
+    console.log(`${personToUpdate.personName} age has been updated`);
+  } else {
+    console.log(`Username not found`);
+  }
+}
+updateAge("Yogha Raj Dhayal", 30);
+
+// Deleting
+people = [];
+
+// console.log(people);
+
+//  Primitive Array
+const input = prompt(`What do you want ?`);
+const inputFirstLetter = input.slice(0, 1).toUpperCase();
+const remainingLetters = input.slice(1).toLowerCase();
+const finalInput = inputFirstLetter.concat(remainingLetters);
+const fruits = ["Apple", "Orange", "Banana", "Grapes"];
+
+//  creating instance in fruits
+fruits.push("Mango");
 // fruits.unshift("Jack fruit");
 
-// function newFruits(fruitName) {
-//   return fruitName;
-// }
-// const stocks = newFruits("Pomegranate")
-// fruits.push(stocks);
+function newFruits(fruitName) {
+  return fruitName;
+}
+const stocks = newFruits("Pomegranate");
+fruits.push(stocks);
 
-// // reading an instance in fruits
-// const fr = fruits.find((val)=>{
-//     return val === finalInput
-// })
+// reading an instance in fruits
+const fr = fruits.find((val) => {
+  return val === finalInput;
+});
 
-// if(fr){
-//     console.log(`we have ${finalInput}...!`);
-// }else{
-//     console.log(`we dont have ${finalInput}...`);
-// }
+if (fr) {
+  console.log(`we have ${finalInput}...!`);
+} else {
+  console.log(`we dont have ${finalInput}...`);
+}
 
-// // updating
-// fruits.splice(4, 0, "pineapple");
+// updating
+fruits.splice(4, 0, "pineapple");
 
-// // deleting
+// deleting
 
-// fruits.shift()
+fruits.shift();
 
-// console.log(fruits);
+console.log(fruits);
