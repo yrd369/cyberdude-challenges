@@ -1,3 +1,12 @@
+# Arrays (Javascript Challenge)
+
+This challenge is part of free internship (Fullstack Engineer) offered by [CyberDude Networks Pvt. Ltd.](https://cyberdudenetworks.com) You can find all the source code and live links below.
+
+> Task #4: Create a reference Array and manipulate it with CRUD(Create, Read, Update, Delete)
+
+## Code
+
+```js
 // Reference Array CRUD
 let people = [
   {
@@ -73,43 +82,19 @@ function updateAge(nameOfPerson, newAge) {
 updateAge("Yogha Raj Dhayal", 30);
 
 // Deleting
-people = [];
+people = []
 
 // console.log(people);
+```
 
-//  Primitive Array
-const input = prompt(`What do you want ?`);
-const inputFirstLetter = input.slice(0, 1).toUpperCase();
-const remainingLetters = input.slice(1).toLowerCase();
-const finalInput = inputFirstLetter.concat(remainingLetters);
-const fruits = ["Apple", "Orange", "Banana", "Grapes"];
+### Live link ->
 
-//  creating instance in fruits
-fruits.push("Mango");
-// fruits.unshift("Jack fruit");
+Deploy it and put the link here.
 
-function newFruits(fruitName) {
-  return fruitName;
-}
-const stocks = newFruits("Pomegranate");
-fruits.push(stocks);
+## Acknowledgement
 
-// reading an instance in fruits
-const fr = fruits.find((val) => {
-  return val === finalInput;
-});
+[AnbuSelvan](https://github.com/anburocky3) guided me to learn JavaScript Arrays. [Shajid Shafee](https://github.com/mshajid) Clarified my doubts about JavaScript Array Methods.
 
-if (fr) {
-  console.log(`we have ${finalInput}...!`);
-} else {
-  console.log(`we dont have ${finalInput}...`);
-}
+## References:
 
-// updating
-fruits.splice(4, 0, "pineapple");
-
-// deleting
-
-fruits.shift();
-
-console.log(fruits);
+[JavaScript Arrays](https://www.youtube.com/watch?v=Amu-MKgfkpk&list=PL73Obo20O_7ihsIM5K-hHYPrcqkkdQcLa&index=50)
