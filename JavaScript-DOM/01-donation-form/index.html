@@ -14,8 +14,10 @@
     />
   </head>
   <body class="bg-[#fcb793]">
+    <!-- donation page -->
     <main class="bg-white mx-96 py-5 my-20 mt-5 rounded-xl space-y-5">
-      <div class="text-center">
+      <!-- heading -->
+      <header class="text-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           height="60"
@@ -29,70 +31,120 @@
         </svg>
         <h1 class="text-4xl">Donation Form</h1>
         <p class="text-xl font-thin mt-2" id="greet"></p>
-      </div>
-      <div class="ml-10">
-        <label>Name</label>
-        <form>
-          <input
-            type="text"
-            class="bg-[#f0f3ff] py-2 px-5 w-60 rounded-2xl outline-none text-left mt-2"
-            placeholder="firstname"
-            id="firstName"
-          />
-          <input
-            type="text"
-            class="bg-[#f0f3ff] py-2 px-5 w-60 rounded-2xl outline-none text-left mt-2"
-            placeholder="lastname"
-            id="lastName"
-          />
-        </form>
-      </div>
-      <div class="ml-10">
-        <label>Email</label>
-        <form>
+      </header>
+      <!-- name input -->
+      <form name="donation" class="ml-10 space-y-5">
+        <label class="ml-2 mt-10">Name</label>
+        <div class="flex">
+          <div>
+            <input
+              type="text"
+              class="bg-[#f0f3ff] py-1 px-5 w-60 rounded-2xl outline-none text-left mt-2"
+              placeholder="firstname"
+              id="fNameIn"
+              name="firstName"
+              required
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              class="bg-[#f0f3ff] py-1 px-5 w-60 rounded-2xl outline-none text-left mt-2 ml-3"
+              placeholder="lastname"
+              id="lNameIn"
+              name="lastName"
+              required
+            />
+          </div>
+        </div>
+        <!-- Email input -->
+        <div name="email">
+          <label class="block ml-2">Email</label>
           <input
             type="email"
-            class="bg-[#f0f3ff] py-2 px-5 w-96 rounded-2xl outline-none mt-2"
+            class="bg-[#f0f3ff] py-1 px-5 w-96 rounded-2xl outline-none mt-2"
             placeholder="Type your Mail ID"
-            id="email"
+            id="emailIn"
+            name="email"
+            required
           />
-        </form>
-      </div>
-      <div class="ml-10">
-        <label>How much would you like to donate?</label>
-        <form>
-          <input
-            type="number"
-            class="bg-[#f0f3ff] py-2 px-5 w-60 rounded-2xl outline-none mt-2"
-          />
-          <label>₹</label>
-        </form>
-      </div>
-      <div class="ml-10">
-        How would you like to donate?
-        <form type>
+        </div>
+        <!-- message -->
+        <div>
+          <label class="block ml-2 mb-2">Wishes</label>
+          <textarea placeholder="Type your message" rows="5" class="bg-[#f0f3ff] outline-none p-2 rounded-2xl" cols="49"></textarea>
+        </div>
+        <!-- donation amount -->
+        <div class="flex space-x-5">
+          <div class="flex space-x-1">
+            <input
+              type="radio"
+              id="amountIn500"
+              value="500"
+              name="amount"
+              required
+            />
+            <label class="px-3 py-1 rounded-3xl bg-[#f0611e] text-white" for="amountIn500">500<label>
+          </div>
+          <div class="flex space-x-1">
+            <input
+              type="radio"
+              id="amountIn1000"
+              name="amount"
+              value="1000"
+              required
+            />
+            <label class="px-3 py-1 rounded-3xl bg-[#f0611e] text-white" for="amountIn1000">1000</label>
+          </div>
+          <div class="flex space-x-1">
+            <input
+              type="radio"
+              id="amountIn1500"
+              name="amount"
+              value="1500"
+              required
+            />
+            <label class="px-3 py-1 rounded-3xl bg-[#f0611e] text-white" for="amountIn1500">1500</label>
+          </div>
+          <div class="flex space-x-1">
+            <input
+              type="radio"
+              id="amountIn2000"
+              name="amount"
+              value="2000"
+              required
+            />
+            <label class="px-3 py-1 rounded-3xl bg-[#f0611e] text-white" for="amountIn2000">2000</label>
+          </div>
+        </div>
+        <!-- payment method -->
+        <div>
           <select
-            class="bg-[#f0f3ff] py-2 px-5 w-96 rounded-2xl outline-none mt-2"
+            class="bg-[#f0f3ff] py-1 px-5 w-96 rounded-2xl outline-none mt-2"
             name="select"
           >
-            >
             <option>By UPI</option>
             <option>By Card</option>
           </select>
-        </form>
-      </div>
-      <div class="ml-10">
-        <input type="checkbox" id="checkbox" />
-        <label>I agree to make a donation, and proceed to pay.</label>
-      </div>
-      <div id="userGreet" class="ml-10">
-        <button
-          class="py-2 px-7 bg-[#f0611e] text-white rounded-3xl mx-auto"
-          id="proceedBtn"
-        >
-          Proceed
-        </button>
-      </div>
+        </div>
+        <!-- terms and condition checkbox -->
+        <div>
+          <label for="checkbox"
+            ><input type="checkbox" id="checkbox" required/> I agree to make a donation,
+            and proceed to pay.
+          </label>
+        </div>
+        <!-- proceed button -->
+        <div>
+          <button
+            class="py-2 px-7 bg-[#f0611e] text-white rounded-3xl mx-auto"
+            id="proceedBtn"
+            name="proceed"
+          >
+            Proceed
+          </button>
+        </div>
+      </form>
     </main>
     <script src="./assets/js/main.js"></script>
   </body>
