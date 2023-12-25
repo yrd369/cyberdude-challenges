@@ -31,7 +31,9 @@ const handleSubmit = (event) => {
   // getting input value
   const formELData = [...new FormData(formEL)];
   const objFormData = Object.fromEntries(formELData);
-  console.log(JSON.stringify(objFormData));
+  console.log(objFormData);
+  const valueGet = JSON.stringify(objFormData);
+  localStorage.setItem("formValue",valueGet);
 };
 
 formEL.addEventListener("submit", handleSubmit);
