@@ -2,7 +2,7 @@
 const pEl = document.querySelector("p#greet");
 const formEL = document.forms.donation;
 const { firstName, lastName, email, amount } = formEL.elements;
-
+console.log(amount);
 // greeting Donar
 const handleSubmit = (event) => {
   event.preventDefault();
@@ -31,9 +31,9 @@ const handleSubmit = (event) => {
   // getting input value
   const formELData = [...new FormData(formEL)];
   const objFormData = Object.fromEntries(formELData);
-  console.log(objFormData);
   const valueGet = JSON.stringify(objFormData);
-  localStorage.setItem("formValue",valueGet);
+  localStorage.setItem("formValue", valueGet);
+  console.log(localStorage.getItem("formValue"));
 };
 
 formEL.addEventListener("submit", handleSubmit);
