@@ -1,39 +1,97 @@
+import JustValidate from "just-validate";
+
 // getting elements
 const pEl = document.querySelector("p#greet");
-const formEL = document.forms.donation;
+const formEL = document.getElementById("donation-form");
+const validation = new JustValidate("#donation-form");
 const { firstName, lastName, email, amount } = formEL.elements;
 
+// validation
+validation.addField(
+  "#fNameIn",
+  [
+    {
+      rule: "required",
+    },
+    {
+      rule: "minLength",
+      value: 3,
+    },
+  ],
+  { errorLabelCssClass: ["ml-2", "mt-2", "text-sm"] }
+);
+validation.addField(
+  "#lNameIn",
+  [
+    {
+      rule: "required",
+    },
+  ],
+  { errorLabelCssClass: ["ml-6", "mt-2", "text-sm"] }
+);
+validation.addField(
+  "#emailIn",
+  [
+    {
+      rule: "required",
+    },
+    {
+      rule: "email",
+    },
+  ],
+  {
+    errorLabelCssClass: ["ml-2", "mt-2", "text-sm"],
+  }
+);
+validation.addField(
+  "#text",
+  [
+    {
+      rule: "required",
+    },
+    {
+      rule: "minLength",
+      value: 2,
+    },
+  ],
+  { errorLabelCssClass: ["ml-2", "mt-2", "text-sm"] }
+);
+validation.addField(
+  "#checkbox",
+  [
+    {
+      rule: "required",
+    },
+  ],
+  { errorLabelCssClass: ["mt-2", "text-sm"] }
+);
+
 // greeting Donar
-const handleSubmit = (event) => {
+validation.onSuccess((event) => {
   event.preventDefault();
   formEL.classList.add("hidden");
   let greetStatement = "✅ You have donated ₹";
 
   // printing value by array method
-  const inputVal = Array.from(amount).find((val) => {
+  const inputVal = [...amount].find((val) => {
     return val.checked;
   });
   greetStatement += ` ${inputVal.value}`;
-
-  // printing value by if-else
-  // if (amount[0].checked) {
-  //   greetStatement = `✅ You have donated ₹${amount[0].value}`;
-  // } else if (amount[1].checked) {
-  //   greetStatement = `✅ You have donated ₹${amount[1].value}`;
-  // } else if (amount[2].checked) {
-  //   greetStatement = `✅ You have donated ₹${amount[2].value}`;
-  // } else if (amount[3].checked) {
-  //   greetStatement = `✅ You have donated ₹${amount[3].value}`;
-  // }
   pEl.innerText = `${greetStatement}
   ✨Thanks for your donation ${firstName.value}.`;
 
   // getting input value
-  const formELData = [...new FormData(formEL)];
-  const objFormData = Object.fromEntries(formELData);
-  console.log(objFormData);
-  const valueGet = JSON.stringify(objFormData);
-  localStorage.setItem("formValue",valueGet);
-};
+  const formElData = new FormData(formEL).entries();
+  const formDataObj = Object.fromEntries(formElData);
+  const existingData = localStorage.getItem("donorInfo");
+  const existingDataArr = JSON.parse(existingData);
+  const data = [];
 
-formEL.addEventListener("submit", handleSubmit);
+  if (existingDataArr) {
+    existingDataArr.push(formDataObj);
+    localStorage.setItem("donorInfo", JSON.stringify(existingDataArr));
+  } else {
+    data.push(formDataObj);
+    localStorage.setItem("donorInfo", JSON.stringify(data));
+  }
+});
