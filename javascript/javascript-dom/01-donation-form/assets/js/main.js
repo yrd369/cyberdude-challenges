@@ -2,7 +2,7 @@
 const pEl = document.querySelector("p#greet");
 const formEL = document.forms.donation;
 const { firstName, lastName, email, amount } = formEL.elements;
-console.log(amount);
+
 // greeting Donar
 const handleSubmit = (event) => {
   event.preventDefault();
