@@ -1,8 +1,10 @@
 import JustValidate from "just-validate";
+import { v4 as uuidv4 } from "uuid";
+
+// getting elements
 const formEl = document.getElementById("userData");
 const validations = new JustValidate(formEl);
 const { userName, email, mobileNo, select } = formEl.elements;
-const dataTable = document.querySelector("#output");
 const resultDivEl = document.querySelector("#result-Div");
 const tableEl = document.querySelector("#table");
 const localStorageKey = "data";
@@ -50,11 +52,17 @@ validations.addField("#checkBox", [
 ]);
 
 validations.onSuccess((event) => {
-  const inputData = new FormData(formEl).entries();
+  const inputData = new FormData(formEl);
+  inputData.append("id", uuidv4());
+  inputData.append("createdAt", Date.now());
   const dataObj = Object.fromEntries(inputData);
   const value = localStorage.getItem("data");
   const valueArr = JSON.parse(value);
   const newData = [];
+
+  //generating id
+
+  console.log(dataObj);
 
   // getting values from local storage
   if (valueArr) {
@@ -73,6 +81,7 @@ function gettingValue() {
   const inputValArr = JSON.parse(inputVal);
   if (inputValArr && inputVal.length > 0) {
     resultDivEl.classList.remove("hidden");
+    tableEl.innerHTML = "";
     const arr = [];
     const finalData = inputValArr.map((val) => {
       const trEl = document.createElement("tr");
@@ -84,7 +93,7 @@ function gettingValue() {
       tdEl.textContent = val.userName;
       tdEl2.classList.add("px-2", "py-1", "border", "w-45%");
       tdEl2.textContent = val.mobileNo;
-      btnEl.className = "bg-red-600 text-white px-2 py-1 rounded";
+      btnEl.className = "bg-red-500 text-white px-2 py-1 rounded text-sm";
       btnEl.textContent = "Delete";
       tdEl3.classList.add("px-2", "py-1", "border", "w-10");
       tdEl3.append(btnEl);
@@ -94,28 +103,7 @@ function gettingValue() {
     arr.forEach((val) => {
       tableEl.append(val);
     });
-  }else{
+  } else {
     console.log("no storage");
   }
 }
-
-// const finalData = inputValArr
-//   .map((data) => {
-//     return `   <tr class="text-center">
-//   <td class="">${data.userName}</td>
-//   <td class="px-2 py-1 border w-45% ">${data.mobileNo}</td>
-//   <td class="px-2 py-1 border w-10%">
-//     <button class=id="delBtn">Delete</button>
-//   </td>
-// </tr>`;
-//   })
-//   .join(" ");
-// tableEl.innerHTML += finalData;
-
-//   // delete function
-//   const delBtnEl = document.querySelectorAll("#delBtn");
-//   delBtnEl.forEach((btn) => {
-//     btn.addEventListener("click", (e) => {
-//       e.target.parentNode.parentNode.remove();
-//     });
-//   });

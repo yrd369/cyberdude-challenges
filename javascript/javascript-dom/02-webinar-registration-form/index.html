@@ -5,6 +5,9 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:title" content="Webinar registration form"/> 
+  <meta property="og:description" content="Track all the registered user"/> 
+  <meta property="og:image" content="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.wallpaperflare.com%2Fwebinar-digital-wallpaper-education-training-learn-seminar-wallpaper-ulfkd&psig=AOvVaw22McFmgAHxV7qBNN-MYPpo&ust=1704038323979000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCJigms7Dt4MDFQAAAAAdAAAAABAD"/> 
   <title>registration form</title>
   <link href="./assets/css/main.css" rel="stylesheet">
 </head>
@@ -51,12 +54,13 @@
   </main>
   <div class="bg-[#fff] max-w-2xl shadow-lg rounded-md mx-auto mt-5 px-10 py-7 hidden" id="result-Div">
     <h1 class="text-center font-semibold text-4xl mt-0">Registered users</h1>
-    <table class="mt-5 w-full text-center" id="table">
+    <table class="mt-5 w-full text-center" >
       <tr>
         <th class="px-2 py-1 border w-45%">Name</th>
         <th class="px-2 py-1 border w-45%">Mobile No</th>
         <th class="px-2 py-1 border w-10%"></th>
       </tr>
+      <tbody id="table"></tbody>
     </table>
   </div>
   <script type="module" src="./assets/js/main.js"></script>
