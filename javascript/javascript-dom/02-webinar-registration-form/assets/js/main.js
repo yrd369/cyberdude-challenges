@@ -62,8 +62,6 @@ validations.onSuccess((event) => {
 
   //generating id
 
-  console.log(dataObj);
-
   // getting values from local storage
   if (valueArr) {
     valueArr.push(dataObj);
@@ -95,6 +93,9 @@ function gettingValue() {
       tdEl2.textContent = val.mobileNo;
       btnEl.className = "bg-red-500 text-white px-2 py-1 rounded text-sm";
       btnEl.textContent = "Delete";
+      btnEl.addEventListener("click", (e) => {
+        delFunc(val);
+      });
       tdEl3.classList.add("px-2", "py-1", "border", "w-10");
       tdEl3.append(btnEl);
       trEl.append(tdEl, tdEl2, tdEl3);
@@ -105,5 +106,18 @@ function gettingValue() {
     });
   } else {
     console.log("no storage");
+  }
+}
+
+function delFunc(obj) {
+  const confirmation = confirm(`Do you want to delete ${obj["userName"]}`);
+  if (confirmation) {
+    const data = localStorage.getItem(localStorageKey);
+    const dataObj = JSON.parse(data);
+    const otherRecords = dataObj.filter((val) => {
+      return val.id != obj.id ;
+    });
+    localStorage.setItem(localStorageKey,JSON.stringify(otherRecords));
+    gettingValue();
   }
 }
