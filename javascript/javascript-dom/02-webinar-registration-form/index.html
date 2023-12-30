@@ -17,7 +17,7 @@
         <div class="space-y-1">
           <label class="block font-medium">Name</label>
           <input type="text" class="bg-[#E5E7EB] border-[#D1D5DB] border-t-1 w-full outline-none px-3 py-1 rounded"
-            placeholder="Enter your name" name="userName" required>
+            placeholder="Enter your name" name="userName" id="userName" required>
         </div>
         <div class="space-y-1">
           <label class="block font-medium">Email</label>
@@ -25,20 +25,23 @@
             placeholder="name@gmail.com" name="email" id="email" required>
         </div>
         <div class="space-y-1">
-          <label class="block font-medium">Mobile No</label>
-          <input type="text" class="bg-[#E5E7EB] border-[#D1D5DB] border-t-1 w-full outline-none px-3 py-1 rounded" name="mobileNo" id="mobileNo" required>
+          <label class="block font-medium">Mobile Number</label>
+          <input type="tel" class="bg-[#E5E7EB] border-[#D1D5DB] border-t-1 w-full outline-none px-3 py-1 rounded"
+            name="mobileNo" id="mobileNo" required>
         </div>
         <div class="space-y-1">
           <label class="block font-medium">How did you hear about the webinar?</label>
           <select class="bg-[#E5E7EB] w-full outline-none rounded py-1 px-3" name="select" id="reference">
-            <option>Social media</option>
-            <option>Advertisement</option>
-            <option>Other</option>
+            <option value="">--Please select an option--</option>
+            <option value="Social media">Social media</option>
+            <option value="Advertisement">Advertisement</option>
+            <option value="Other">Other</option>
           </select>
         </div>
-        <div class="space-x-2 flex items-center">
-          <input type="checkbox" id="checkBox">
-          <label class="block font-medium" for="checkBox">I agree to terms and conditions.</label>
+        <div>
+          <label class="font-medium flex items-center" for="checkBox"><input type="checkbox" class="mr-2"
+              id="checkBox">I agree to terms and
+            conditions.</label>
         </div>
         <div>
           <button class="bg-[#067F7B] text-white w-full rounded py-1 font-normal">Submit</button>
@@ -46,19 +49,13 @@
       </form>
     </div>
   </main>
-  <div class="bg-[#fff] max-w-lg shadow-lg rounded-md mx-auto mt-5 px-10 py-7">
-    <h1 class="text-center font-semibold text-2xl mt-0">Registered users</h1>
-    <table class="mt-5 border-spacing-1">
-      <tr class="flex justify-center gap-24">
-        <th>Name</th>
-        <th>Mobile No</th>
-        <th>Country</th>
-      </tr>
-      <tr class="gap-24
-      ">
-        <td>hai</td>
-        <td>hai</td>
-        <td>hai</td>
+  <div class="bg-[#fff] max-w-2xl shadow-lg rounded-md mx-auto mt-5 px-10 py-7 hidden" id="result-Div">
+    <h1 class="text-center font-semibold text-4xl mt-0">Registered users</h1>
+    <table class="mt-5 w-full text-center" id="table">
+      <tr>
+        <th class="px-2 py-1 border w-45%">Name</th>
+        <th class="px-2 py-1 border w-45%">Mobile No</th>
+        <th class="px-2 py-1 border w-10%"></th>
       </tr>
     </table>
   </div>
