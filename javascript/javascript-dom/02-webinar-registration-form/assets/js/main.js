@@ -30,14 +30,14 @@ validations.addField("#mobileNo", [
     rule: "required",
     errorMessage: "Enter a valid mobile number",
   },
-  // {
-  //   rule: "minLength",
-  //   value: 10,
-  // },
-  // {
-  //   rule: "maxLength",
-  //   value: 10,
-  // },
+  {
+    rule: "minLength",
+    value: 10,
+  },
+  {
+    rule: "maxLength",
+    value: 10,
+  },
 ]);
 validations.addField("#reference", [
   {
