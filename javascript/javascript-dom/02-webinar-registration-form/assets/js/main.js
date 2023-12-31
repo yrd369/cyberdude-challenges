@@ -4,7 +4,6 @@ import { v4 as uuidv4 } from "uuid";
 // getting elements
 const formEl = document.getElementById("userData");
 const validations = new JustValidate(formEl);
-const { userName, email, mobileNo, select } = formEl.elements;
 const resultDivEl = document.querySelector("#result-Div");
 const tableEl = document.querySelector("#table");
 const localStorageKey = "data";
@@ -60,8 +59,6 @@ validations.onSuccess((event) => {
   const valueArr = JSON.parse(value);
   const newData = [];
 
-  //generating id
-
   // getting values from local storage
   if (valueArr) {
     valueArr.push(dataObj);
@@ -74,6 +71,7 @@ validations.onSuccess((event) => {
   formEl.reset();
 });
 
+// creating elements
 function gettingValue() {
   const inputVal = localStorage.getItem(localStorageKey);
   const inputValArr = JSON.parse(inputVal);
@@ -104,20 +102,19 @@ function gettingValue() {
     arr.forEach((val) => {
       tableEl.append(val);
     });
-  } else {
-    console.log("no storage");
   }
 }
 
+// deleting
 function delFunc(obj) {
   const confirmation = confirm(`Do you want to delete ${obj["userName"]}`);
   if (confirmation) {
     const data = localStorage.getItem(localStorageKey);
     const dataObj = JSON.parse(data);
     const otherRecords = dataObj.filter((val) => {
-      return val.id != obj.id ;
+      return val.id != obj.id;
     });
-    localStorage.setItem(localStorageKey,JSON.stringify(otherRecords));
+    localStorage.setItem(localStorageKey, JSON.stringify(otherRecords));
     gettingValue();
   }
 }
