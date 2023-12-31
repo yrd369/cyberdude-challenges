@@ -54,7 +54,7 @@ validations.onSuccess((event) => {
   const inputData = new FormData(formEl);
   inputData.append("id", uuidv4());
   inputData.append("createdAt", Date.now());
-  const dataObj = Object.fromEntries(inputData);
+  const dataObj = Object.fromEntries(inputData.entries());
   const value = localStorage.getItem("data");
   const valueArr = JSON.parse(value);
   const newData = [];
@@ -75,7 +75,7 @@ validations.onSuccess((event) => {
 function gettingValue() {
   const inputVal = localStorage.getItem(localStorageKey);
   const inputValArr = JSON.parse(inputVal);
-  if (inputValArr && inputVal.length > 0) {
+  if (inputValArr && inputValArr.length > 0) {
     resultDivEl.classList.remove("hidden");
     tableEl.innerHTML = "";
     const arr = [];
@@ -102,12 +102,13 @@ function gettingValue() {
     arr.forEach((val) => {
       tableEl.append(val);
     });
+    
   }
 }
 
 // deleting
 function delFunc(obj) {
-  const confirmation = confirm(`Do you want to delete ${obj["userName"]}`);
+  const confirmation = confirm(`Do you want to delete ${obj["userName"]}?`);
   if (confirmation) {
     const data = localStorage.getItem(localStorageKey);
     const dataObj = JSON.parse(data);
