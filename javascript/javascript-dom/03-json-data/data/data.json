@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "productName": "Tiger Prawns",
+    "price": "500/kg",
+    "image": "../assets/components/prawns.jpg"
+  },
+  {
+    "id": 2,
+    "productName": "Mullet",
+    "price": "350/kg",
+    "image":"../assets/components/mullet.jpg"
+  },
+  {
+    "id": 3,
+    "productName": "Crabs",
+    "price": "450/kg",
+    "image":"../assets/components/crabs.jpg"
+  },
+  {
+    "id": 4,
+    "productName": "Indian Mackerel",
+    "price": "300/kg",
+    "image":"../assets/components/indian-mackerel.jpeg"
+  },
+  {
+    "id": 5,
+    "productName": "Ribbon fish",
+    "price": "200/kg",
+    "image":"../assets/components/ribbon fish.jpg"
+  },
+  {
+    "id": 6,
+    "productName": "Tuna",
+    "price": "350/kg",
+    "image":"../assets/components/tuna.jpg"
+  }
+]
