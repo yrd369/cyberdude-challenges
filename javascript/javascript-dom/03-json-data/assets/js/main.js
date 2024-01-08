@@ -10,7 +10,7 @@ data.forEach((val) => {
   img.setAttribute("src", val.image);
   // product name
   let productName = document.createElement("p");
-  productName.classList = "text-xl font-semifold "
+  productName.classList = "text-xl font-semibold "
   productName.append(val.productName);
   // product price
   let productPrice = document.createElement("p");
