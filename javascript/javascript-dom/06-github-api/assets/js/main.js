@@ -26,10 +26,11 @@ const dataBase = [
 
 function display(val) {
   const xhr = new XMLHttpRequest();
-  xhr.onload = () => {
+  xhr.onload = function () {
     const data = JSON.parse(xhr.responseText);
+    console.log(data.login);
     const div = document.createElement("div");
-    div.innerHTML = ` <div class="bg-[#F8F8FA] w-fit px-6 py-5">
+    div.innerHTML = ` <div class="bg-[#F8F8FA] w-fit px-6 py-8 rounded shadow-md">
     <div class="flex items-center">
       <img src=${data.avatar_url} class="w-16 rounded-full">
       <div class="px-3">
@@ -47,7 +48,9 @@ function display(val) {
       <p class="text-sm font-medium">Followers: <span class="text-sm font-normal">${data.followers}</span></p>
       <p class="text-sm font-medium">Following: <span class="text-sm font-normal">${data.following}</span></p>
       </div>
-      <button class="text-sm font-medium bg-[#EEEBED] text-[#000] px-3 py-0.5 rounded w-full" id="btn" href="https://github.com/${data.login}?tab=repositories">Repository</button>
+      <div class="bg-[#EEEBED] text-[#000] px-3 py-0.5 rounded w-full text-center" for="btn">
+      <a class="text-sm font-medium cursor-pointer" id="btn" href="https://github.com/${data.login}?tab=repositories" >Repository</a>
+      </div>
     </div>
   </div>`;
     cardEl.append(div);
