@@ -1,21 +1,25 @@
-const obj = new Promise((resolve, reject) => {
-  let resolution = true;
-  if (resolution) {
-    resolve({id:1,name:"yrd"});
-  } else {
-    reject("bye");
-  }
-});
-// obj
-//   .then((message) => {
-//     console.log(message);
-//   })
-//   .catch((errMessage) => {
-//     console.log("error:", errMessage);
-//   });
+const blockQuoteEl = document.querySelector("blockquote");
+const refresbtnEl = document.querySelector("button");
+const api_Url = "https://api.adviceslip.com/advice";
 
-const get = async () => {
-  const result = await obj;
-  console.log("hey",result);
-  console.log(result);
-};
+// btn
+refresbtnEl.style.display = "none"
+refresbtnEl.addEventListener("click", () => {
+  window.location.href = "/";
+});
+
+// call the API
+async function getAdvice() {
+  try {
+    const response = await fetch(api_Url);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("some network issue: ", error);
+  }
+}
+const adviceData = await getAdvice();
+blockQuoteEl.textContent = adviceData.slip.advice;
+
+// btn
+refresbtnEl.style.display = "block"
