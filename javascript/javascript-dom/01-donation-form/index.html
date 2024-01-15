@@ -14,7 +14,7 @@
 
 <body class="bg-[#fcb793]">
   <!-- donation page -->
-  <main class="bg-white mx-auto py-9 my-20 mt-5 rounded-xl space-y-5 px-5 max-w-lg">
+  <main class="bg-white mx-auto py-9 my-20 mt-9 rounded-xl space-y-5 px-5 max-w-sm md:max-w-lg">
     <!-- heading -->
     <header class="text-center">
       <svg xmlns="http://www.w3.org/2000/svg" height="60" width="60" viewBox="0 0 576 512" class="mx-auto">
@@ -25,18 +25,18 @@
       <p class="text-xl font-thin mt-2" id="greet"></p>
     </header>
     <!-- name input -->
-    <form name="donation" class="px-5 space-y-5">
+    <form name="donation" class=" px-3 md:px-5 space-y-5">
       <div>
         <label class="ml-2 mt-10 font-semibold">Name</label>
         <div class="flex">
           <div>
             <input type="text"
-              class="bg-[#f0f3ff] py-2 px-5 w-52 rounded-2xl outline-none text-left mt-2 focus:bg-[lightblue]"
+              class="bg-[#f0f3ff] py-2 px-5 w-36 md:w-52 rounded-2xl outline-none text-left mt-2 focus:bg-[lightblue]"
               placeholder="firstname" id="fNameIn" name="firstName" required />
           </div>
           <div>
             <input type="text"
-              class="bg-[#f0f3ff] py-2 px-5 w-52 rounded-2xl outline-none text-left mt-2 ml-3 focus:bg-[lightblue]"
+              class="bg-[#f0f3ff] py-2 px-5 w-36 md:w-52 rounded-2xl outline-none text-left mt-2 ml-3 focus:bg-[lightblue]"
               placeholder="lastname" id="lNameIn" name="lastName" required />
           </div>
         </div>
@@ -56,7 +56,7 @@
       <!-- donation amount -->
       <div>
         <label class="ml-2 font-semibold">How much do you wish to donate?</label>
-        <div class="flex space-x-5 mt-2">
+        <div class="flex space-x-2 md:space-x-5 mt-2">
           <div class="flex space-x-2 ml-2">
             <input type="radio" id="amountIn500" value="500" name="amount" required />
             <label class="px-3 py-1 rounded-3xl bg-[#f0611e] text-white" for="amountIn500">500<label>
