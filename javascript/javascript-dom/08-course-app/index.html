@@ -1,14 +1,52 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Course App</title>
-    <link rel="stylesheet" href="./assets/css/main.css">
-  </head>
-  <body>
-    <div class=""></div>
-    <script type="module" src="./assets/js/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Course App</title>
+  <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+
+<body class="bg-[#2D3250]">
+  <div class="bg-[#7077A1] mx-auto max-w-xl mt-10 rounded-lg">
+    <h1 class="font-semibold text-2xl text-center pt-3">SYLLABUS UPDATE</h1>
+    <div class="p-11 pt-5">
+      <form class="space-y-3">
+        <!-- course title & content -->
+        <div class="flex space-x-6 items-center">
+          <div>
+            <label class="block text-[#424769] font-semibold mb-1">Course Title</label>
+            <input type="text" placeholder="Course Title" class="px-3 py-1 rounded w-60 outline-none">
+          </div>
+          <div>
+            <label class="block text-[#424769] font-semibold mb-1">Course Content</label>
+            <select class="px-3 py-1 rounded w-56 outline-none">
+              <option>-- Content type --</option>
+            </select>
+          </div>
+        </div>
+        <!-- authors -->
+        <div>
+          <label class="text-[#424769] font-semibold">Author</label>
+          <select type="text" placeholder="Author" class="px-3 py-1 rounded w-full mt-1 outline-none">
+            <option class="px-3 py-1 rounded">-- Author --</option>
+            <option>Anbu Selvan</option>
+            <option>Yogha Raj Dhayal</option>
+            <option>Shajid Shafee</option>
+          </select>
+        </div>
+        <!-- time -->
+        <div class="pb-5">
+          <label class="block text-[#424769] font-semibold mb-1">Time</label>
+          <input type="time" class="w-full rounded px-3 py-1 outline-none">
+        </div>
+        <button class="bg-[#F6B17A] w-full rounded text-[#424769] px-3 py-0.5 font-medium">Submit</button>
+      </form>
+    </div>
+  </div>
+  <script type="module" src="./assets/js/main.js"></script>
+</body>
+
 </html>
