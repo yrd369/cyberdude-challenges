@@ -5,14 +5,18 @@ const addBtnEl = document.getElementById("addBtn");
 const contentEl = document.getElementById("content");
 const gridEl = document.getElementById("grid");
 const localStorageKey = "data";
-// -----------------------------------------------------------------------------------------------------------------
-// form validation[#]
-// getting input values from dom[#]
-// store it in array[]
-// store the array in local storage[]
+const closeIconEl = document.getElementById("closeIcon");
+const { link } = formEl.elements;
+
+// form close button
 addBtnEl.addEventListener("click", () => {
   contentEl.classList.remove("hidden");
 });
+closeIconEl.addEventListener("click", () => {
+  contentEl.classList.add("hidden");
+});
+
+// validations
 validate.addField("#title", [
   {
     rule: "required",
@@ -31,13 +35,14 @@ validate.addField("#author", [
     errorMessage: "Select author",
   },
 ]);
-validate.addField("#time", [
+validate.addField("#link", [
   {
     rule: "required",
-    errorMessage: "Select time",
+    errorMessage: "paste your link",
   },
 ]);
 
+// stored in local storage
 validate.onSuccess((e) => {
   e.preventDefault();
   const formData = new FormData(formEl).entries();
@@ -52,21 +57,26 @@ validate.onSuccess((e) => {
     newData.push(userDataObj);
     localStorage.setItem(localStorageKey, JSON.stringify(newData));
   }
+  location.reload();
+});
 
-  parsedData.map((val) => {
-    const cardEl = document.createElement("div");
-    cardEl.classList = "bg-white rounded items-center shadow-lg p-1";
-    const template = `
-    <div class="p-3">
-      <p class="2xl font-semibold ">Title <span class="bg-gray-300 px-2 ml-5">${val.title}</span></p>
-      <p class="2xl font-semibold">Type <span class="bg-gray-300 px-2 ml-4">${val.contentType}</span></p>
-      <p class="2xl font-semibold">Length <span class="bg-gray-300 px-2">10.00</span></p>
-      <p class="2xl font-semibold">Author <span class="bg-gray-300 px-2 ml-0.5">${val.author}</span></p>
-    </div>
-  </div>`;
-    cardEl.innerHTML = template;
-    gridEl.append(cardEl);
-    contentEl.classList.add("hidden");
-    console.log(val);
-  });
+// displaying in UI
+const allDatas = localStorage.getItem(localStorageKey);
+const allDatasParsed = JSON.parse(allDatas);
+allDatasParsed.map((val) => {
+  const url = val.url;
+  const videoId = url.split("v=")[1];
+  const cardEl = document.createElement("div");
+  cardEl.classList = "bg-white rounded items-center shadow-lg p-1";
+  const template = `
+   <a href="https://www.youtube.com/watch?v=${videoId}"><img src="https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg" class="w-full rounded">
+   <div class="p-3 space-y-1">
+     <p class="text-xl font-semibold">${val.title}</p>
+     <p class="font-semibold">Author <span class="px-2 ml-0.5">${val.author}</span></p>
+     <p class="font-semibold bg-red-700 text-white rounded w-full text-center px-3 py-1">${val.contentType}</p>
+   </div>
+ </div></a>`;
+  cardEl.innerHTML = template;
+  gridEl.append(cardEl);
+  contentEl.classList.add("hidden");
 });
