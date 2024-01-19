@@ -11,70 +11,137 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- google-fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lemon&family=PT+Serif&display=swap" rel="stylesheet">
 </head>
 
-<body class="bg-[#2D3250]">
-  <div class="bg-[#7077A1] mx-auto max-w-xl mt-10 rounded-lg">
-    <h1 class="font-semibold text-2xl text-center pt-3">SYLLABUS UPDATE</h1>
+<body class="bg-primary font-rale">
+  <!-- navbar -->
+  <div class="px-7 py-5 flex items-center justify-between">
+    <img src="./assets/components/logo.png">
+    <ul class="flex space-x-8 font-semibold text-[#fff]">
+      <li>Videos</li>
+      <li>Authors</li>
+      <li>About</li>
+    </ul>
+    <div class="relative">
+      <i class="fa-solid fa-magnifying-glass absolute left-3 top-2 text-gray-400"></i>
+      <input type="search" class="w-96 py-1 outline-none pl-9 pr-2 rounded" placeholder="Search">
+    </div>
+    <div class="flex items-center space-x-5"><img src="./assets/components/profile-pic.jpeg" class="rounded-full w-9">
+      <div class="relative">
+        <i class="fa-solid fa-plus absolute top-2 left-3"></i>
+        <button class="bg-button text-primary px-4 pl-7 py-1.5 font-semibold rounded text-sm" id="addBtn">Add
+          Content</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- hero-section -->
+  <div class="pl-10 bg-seondary py-9 relative">
+    <div class=" flex justify-around items-center relative">
+      <div class="flex-col space-y-3">
+        <h1 class="text-5xl text-white font-semibold">Become a Full Stack Web<br>Developer<br></h1>
+        <p class="text-2xl">Learn from our videos</p>
+      </div>
+      <img src="./assets/components/Full-Stock-Hero.webp" class="rounded mb-10">
+    </div>
+
+    <!-- information div -->
+    <div class="bg-white rounded pr-10 mx-auto p-3 px-5 absolute flex space-x-32 left-20 shadow-xl">
+      <div class="flex space-x-2">
+        <img src="./assets/components/3-Months.svg" class="w-12">
+        <div class="space-y-0">
+          <h1 class="font-bold text-md">6 months</h1>
+          <p>content</p>
+        </div>
+      </div>
+      <div class="flex space-x-2">
+        <img src="./assets/components/live.png" class="w-12">
+        <div class="space-y-0">
+          <h1 class="font-bold text-md">Live Sessions</h1>
+          <p>Interact with us on youtube</p>
+        </div>
+      </div>
+      <div class="flex space-x-2">
+        <img src="./assets/components/playlist.png" class="w-12">
+        <div class="space-y-0">
+          <h1 class="font-bold text-md">Organised Playlist</h1>
+          <p>Learn from Scratch</p>
+        </div>
+      </div>
+      <div class="flex space-x-2">
+        <img src="./assets/components/softskills.svg" class="w-12">
+        <div class="space-y-0">
+          <h1 class="font-bold text-md">Soft Skills</h1>
+          <p>Weekly thrice</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- input-box -->
+  <div class="bg-additional mx-auto max-w-xl mt-10 rounded-lg absolute top-20 left-96 hidden" id="content">
+    <div class="relative">
+      <h1 class="font-semibold text-2xl text-center pt-3">Content Update</h1>
+      <a href="./index.html"><img src="./assets/components/close.png"
+          class="w-6 text-right absolute right-3 top-3.5"></a>
+    </div>
     <div class="p-11 pt-5">
-      <form class="space-y-3">
-        <!-- course title & content -->
+      <form class="space-y-3" id="form">
+        <!--  course title & content -->
         <div class="flex space-x-6 items-center">
           <div>
             <label class="block text-[#424769] font-semibold mb-1">Course Title</label>
-            <input type="text" placeholder="Course Title" class="px-3 py-1 rounded w-60 outline-none">
+            <input type="text" placeholder="Course Title" class="px-3 py-1 rounded w-60 outline-none" id="title" name="title">
           </div>
           <div>
             <label class="block text-[#424769] font-semibold mb-1">Course Content</label>
-            <select class="px-3 py-1 rounded w-56 outline-none">
-              <option>-- Content type --</option>
+            <select class="px-3 py-1 rounded w-56 outline-none" id="type" name="contentType">
+              <option value="">-- Content type --</option>
+              <option value="video">Video</option>
+              <option value="pdf">Pdf</option>
             </select>
           </div>
         </div>
         <!-- authors -->
         <div>
           <label class="text-[#424769] font-semibold">Author</label>
-          <select type="text" placeholder="Author" class="px-3 py-1 rounded w-full mt-1 outline-none">
-            <option class="px-3 py-1 rounded">-- Author --</option>
-            <option>Anbu Selvan</option>
-            <option>Yogha Raj Dhayal</option>
-            <option>Shajid Shafee</option>
+          <select type="text" placeholder="Author" class="px-3 py-1 rounded w-full mt-1 outline-none" id="author" name="author">
+            <option class="px-3 py-1 rounded" value="">-- Author --</option>
+            <option value="anbu selvan">Anbu Selvan</option>
+            <option value="yogha raj dhayal">Yogha Raj Dhayal</option>
+            <option value="shajid shafee">Shajid Shafee</option>
           </select>
         </div>
         <!-- time -->
         <div class="pb-5">
           <label class="block text-[#424769] font-semibold mb-1">Time</label>
-          <input type="time" class="w-full rounded px-3 py-1 outline-none">
+          <input type="time" class="w-full rounded px-3 py-1 outline-none" id="time">
         </div>
-        <button class="bg-[#F6B17A] w-full rounded text-[#424769] px-3 py-0.5 font-medium">Submit</button>
+        <button class="bg-[#f9b17a] w-full rounded text-[#424769] px-3 py-0.5 font-medium">Submit</button>
       </form>
     </div>
   </div>
-  <!-- table -->
-  <div class="bg-white max-w-5xl mx-auto mt-10 shadow-xl pl-5 py-3 rounded">
-    <table>
-      <tr class="flex items-center">
-        <th class="pr-10">S.No</th>
-        <th class="px-20">Course Title</th>
-        <th class="px-20">Type</th>
-        <th class="px-20">Author</th>
-        <th class="px-10">Length</th>
-        <th class="px-20">Action</th>
-      </tr>
-      <tr class="flex justify-between items-center">
-        <td class="pr-10">#1</td>
-          <!-- <img src="./assets/components/thumbnail.jpg" class="w-20"> -->
-          <td class="px-20">Introduction to React</td>
-        <td class="px-20">Video</td>
-        <td class="px-20">Anbu</td>
-        <td class="px-10">09.50</td>
-        <td class="px-20 flex justify-between items-center space-x-3">
-          <i class="fa-solid fa-trash"></i>
-          <i class="fa-solid fa-pen-to-square"></i>
-        </td>
-      </tr>
-    </table>
+
+  <!-- card -->
+  <div class="bg-additional pt-14 px-10 py-10">
+    <h1 class="text-4xl text-white font-semibold text-center py-10">Our Playlist</h1>
+    <div class=" grid grid-cols-4 gap-5" id="grid">
+      <div class="bg-white rounded items-center shadow-lg p-1">
+        <img src="./assets/components/thumbnail.jpg" class="w-full rounded">
+        <div class="p-3">
+          <p class="2xl font-semibold ">Title <span class="bg-gray-300 px-2 ml-5">JavaScript Array</span></p>
+          <p class="2xl font-semibold">Type <span class="bg-gray-300 px-2 ml-4">Video</span></p>
+          <p class="2xl font-semibold">Length <span class="bg-gray-300 px-2">10.00</span></p>
+          <p class="2xl font-semibold">Author <span class="bg-gray-300 px-2 ml-0.5">Anbu Selvan</span></p>
+        </div>
+      </div>
+    </div>
   </div>
+
   <script type="module" src="./assets/js/main.js"></script>
 </body>
 
