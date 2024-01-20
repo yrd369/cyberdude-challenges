@@ -58,17 +58,19 @@ validate.onSuccess((e) => {
     localStorage.setItem(localStorageKey, JSON.stringify(newData));
   }
   location.reload();
+  getData();
 });
 
 // displaying in UI
-const allDatas = localStorage.getItem(localStorageKey);
-const allDatasParsed = JSON.parse(allDatas);
-allDatasParsed.map((val) => {
-  const url = val.url;
-  const videoId = url.split("v=")[1];
-  const cardEl = document.createElement("div");
-  cardEl.classList = "bg-white rounded items-center shadow-lg p-1";
-  const template = `
+function getData() {
+  const allDatas = localStorage.getItem(localStorageKey);
+  const allDatasParsed = JSON.parse(allDatas);
+  allDatasParsed.map((val) => {
+    const url = val.url;
+    const videoId = url.split("v=")[1];
+    const cardEl = document.createElement("div");
+    cardEl.classList = "bg-white rounded items-center shadow-lg p-1";
+    const template = `
    <a href="https://www.youtube.com/watch?v=${videoId}"><img src="https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg" class="w-full rounded">
    <div class="p-3 space-y-1">
      <p class="text-xl font-semibold">${val.title}</p>
@@ -76,7 +78,8 @@ allDatasParsed.map((val) => {
      <p class="font-semibold bg-red-700 text-white rounded w-full text-center px-3 py-1">${val.contentType}</p>
    </div>
  </div></a>`;
-  cardEl.innerHTML = template;
-  gridEl.append(cardEl);
-  contentEl.classList.add("hidden");
-});
+    cardEl.innerHTML = template;
+    gridEl.append(cardEl);
+    contentEl.classList.add("hidden");
+  });
+}
