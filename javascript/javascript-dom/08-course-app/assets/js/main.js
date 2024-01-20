@@ -57,7 +57,6 @@ validate.onSuccess((e) => {
     newData.push(userDataObj);
     localStorage.setItem(localStorageKey, JSON.stringify(newData));
   }
-  location.reload();
   getData();
 });
 
