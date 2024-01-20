@@ -71,9 +71,9 @@ function getData() {
     cardEl.classList = "bg-white rounded items-center shadow-lg p-1";
     const template = `
    <a href="https://www.youtube.com/watch?v=${videoId}"><img src="https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg" class="w-full rounded">
-   <div class="p-3 space-y-1">
-     <p class="text-xl font-semibold">${val.title}</p>
-     <p class="font-semibold">Author <span class="px-2 ml-0.5">${val.author}</span></p>
+   <div class="px-3 py-1 space-y-1">
+     <p class="text-xl font-semibold">Title:<span class="px-2 ml-0.5">${val.title}</span></p>
+     <p class="font-semibold">Author: <span class="px-2 ml-0.5">${val.author}</span></p>
      <p class="font-semibold bg-red-700 text-white rounded w-full text-center px-3 py-1">${val.contentType}</p>
    </div>
  </div></a>`;
