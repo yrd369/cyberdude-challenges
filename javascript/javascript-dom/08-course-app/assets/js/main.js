@@ -44,7 +44,6 @@ validate.addField("#link", [
 
 // stored in local storage
 validate.onSuccess((e) => {
-  e.preventDefault();
   const formData = new FormData(formEl).entries();
   const userDataObj = Object.fromEntries(formData);
   const existingData = localStorage.getItem(localStorageKey);
@@ -64,6 +63,7 @@ validate.onSuccess((e) => {
 function getData() {
   const allDatas = localStorage.getItem(localStorageKey);
   const allDatasParsed = JSON.parse(allDatas);
+  gridEl.innerHTML = "";
   allDatasParsed.map((val) => {
     const url = val.url;
     const videoId = url.split("v=")[1];
