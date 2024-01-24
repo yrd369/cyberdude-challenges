@@ -2,7 +2,12 @@
 export default {
   content: ["./index.html", "./**/*.js", "./src/**/*.{js,ts,jsx,tsx,json}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        logo: "Kavoon",
+        navbar: "Joti One",
+      },
+    },
   },
   plugins: [],
 };

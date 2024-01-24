@@ -3,7 +3,7 @@ const productListEl = document.getElementById("productList");
 data.forEach((val) => {
   // container
   const div = document.createElement("div");
-  div.classList = "grid place-items-center place-content-center space-y-1";
+  div.classList = "grid place-items-center place-content-center space-y- shadow-lg";
   // imageEl creation
   const img = document.createElement("img");
   img.classList = "w-48 rounded-md object-cover";
