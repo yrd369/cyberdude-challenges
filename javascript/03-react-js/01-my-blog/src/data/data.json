@@ -1,15 +1,17 @@
 [
   {
-    "id":1,
-    "image": "./images/anbu.jpg",
+    "id": 1,
+    "image": "src/assets/images/anbu.jpg",
     "title": "React will Start from next Week",
-    "news": "CyberDude Networks founder Anbu selvan anounces that Node Js course will start from next in his youtube channel."
+    "date": "July 19, 2019",
+    "news": "Food is a very important part of everyone's life. If you want to be healthy, you have to eat healthy. One of the easiest way to do that is to keep your cooking nice and simple."
   },
 
   {
-    "id":2,
-    "image": "./images/anbu.jpg",
+    "id": 2,
+    "image": "src/assets/images/anbu.jpg",
     "title": "Node Js starts from Febraury",
-    "news": "CyberDude Networks founder Anbu selvan anounces that Node Js course will start from next in his youtube channel."
+    "date": "August 19, 2019",
+    "news": "Work is often a major source of stress. People get frustrated, it ruins their relationship with others and it leads to burnout. By keeping your work life as simple as possible, it will help balance everything out."
   }
 ]

@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
-    <div className="bg-primary text-white flex items-center justify-between p-5 px-8 mb-5">
-      <h1 className="font-semibold font-sans">BLOG.CO</h1>
-      <ul className="flex space-x-3">
+    <div className="bg-primary text-white md:flex items-center justify-center md:justify-between p-5 px-8 mb-5">
+      <h1 className="font-semibold font-sans text-center mb-5 md:mb-0">BLOG.CO</h1>
+      <ul className="text-center md:flex md:space-x-3 space-x-0.5">
         <Link to="/">
           <li>Home</li>
         </Link>
