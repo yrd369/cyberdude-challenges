@@ -1,0 +1,15 @@
+[
+  {
+    "id":1,
+    "image": "./images/anbu.jpg",
+    "title": "React will Start from next Week",
+    "news": "CyberDude Networks founder Anbu selvan anounces that Node Js course will start from next in his youtube channel."
+  },
+
+  {
+    "id":2,
+    "image": "./images/anbu.jpg",
+    "title": "Node Js starts from Febraury",
+    "news": "CyberDude Networks founder Anbu selvan anounces that Node Js course will start from next in his youtube channel."
+  }
+]
