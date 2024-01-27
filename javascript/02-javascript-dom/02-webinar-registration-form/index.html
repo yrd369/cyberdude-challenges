@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="./assets/components/favicon.png" class="rounded-full" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:title" content="Webinar registration form" />
+  <meta property="og:description" content="Track all the registered user" />
+  <meta property="og:image"
+    content="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.wallpaperflare.com%2Fwebinar-digital-wallpaper-education-training-learn-seminar-wallpaper-ulfkd&psig=AOvVaw22McFmgAHxV7qBNN-MYPpo&ust=1704038323979000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCJigms7Dt4MDFQAAAAAdAAAAABAD" />
+  <title>webinar registration form</title>
+  <link href="./assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="bg-[#F3CCF3]">
+  <main class="bg-[#fff] rounded-md max-w-sm md:max-w-lg mx-auto shadow-xl mt-12">
+    <div class="px-10 py-10">
+      <h1 class="text-2xl font-semibold text-center">Webinar Registration Form</h1>
+      <form class="space-y-5 mt-5" name="userData" id="userData">
+        <div class="space-y-1">
+          <label class="block font-medium">Name</label>
+          <input type="text" class="bg-[#E5E7EB] border-[#D1D5DB] border-t-1 w-full outline-none px-3 py-1 rounded"
+            placeholder="Enter your name" name="userName" id="userName" required>
+        </div>
+        <div class="space-y-1">
+          <label class="block font-medium">Email</label>
+          <input type="text" class="bg-[#E5E7EB] border-[#D1D5DB] border-t-1 w-full outline-none px-3 py-1 rounded"
+            placeholder="name@gmail.com" name="email" id="email" required>
+        </div>
+        <div class="space-y-1">
+          <label class="block font-medium">Mobile Number</label>
+          <input type="number" class="bg-[#E5E7EB] border-[#D1D5DB] border-t-1 w-full outline-none px-3 py-1 rounded"
+            name="mobileNo" id="mobileNo" placeholder="9090909090" required>
+        </div>
+        <div class="space-y-1">
+          <label class="block font-medium">How did you hear about the webinar?</label>
+          <select class="bg-[#E5E7EB] w-full outline-none rounded py-1 px-3" name="select" id="reference">
+            <option value="">--Please select an option--</option>
+            <option value="Social media">Social media</option>
+            <option value="Advertisement">Advertisement</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div>
+          <label class="font-medium flex items-center" for="checkBox"><input type="checkbox" class="mr-2"
+              id="checkBox">I agree to terms and
+            conditions.</label>
+        </div>
+        <div>
+          <button class="bg-[#067F7B] text-white w-full rounded py-1 font-normal">Submit</button>
+        </div>
+      </form>
+    </div>
+  </main>
+  <div class="bg-[#fff] max-w-sm md:max-w-3xl shadow-lg rounded-md mx-auto mt-5 px-10 py-7 hidden" id="result-Div">
+    <h1 class="text-center font-semibold text-2xl mt-0">Registered users</h1>
+    <table class="mt-5 w-full text-center">
+      <tr>
+        <th class="px-2 py-1 border w-45%">Name</th>
+        <th class="px-2 py-1 border w-45%">Mobile No</th>
+        <th class="px-2 py-1 border w-10%"></th>
+      </tr>
+      <tbody id="table"></tbody>
+    </table>
+  </div>
+  <script type="module" src="./assets/js/main.js"></script>
+</body>
+
+</html>
