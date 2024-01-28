@@ -25,7 +25,7 @@ const router = createBrowserRouter([
         element: <Contactpage />,
       },
       {
-        path: "/desc",
+        path: "/post/:id",
         element: <Descpage />,
       },
     ],

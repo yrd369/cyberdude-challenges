@@ -1,33 +1,69 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import data from "../data/data.json";
+import Descpage from "./Descpage";
+import pic from "../assets/images/anbu.jpg";
+import Blog from "./Blog";
 const Homepage = () => {
-  const dataBase = data.map((val) => {
-    return (
-      <section className="container mx-auto max-w-5xl">
-        <div className="flex">
-          <div className="p-5 mt-3 rounded md:flex items-center">
-            <div className="space-y-5 p-3 text-center">
-              <img src={val.image} className="w-full md:w-60" />
-              <p>{val.date}</p>
-            </div>
-            <div className="ml-5 p-3 space-y-5">
-              <h1 className=" text-2xl font-serif text-blue-900">
-                {val.title}
-              </h1>
-              <p className="text-lg font-serif max-w-3xl">{val.news}</p>
-              <p className="font-serif text-sm text-blue-500 font-semibold">
-                CONTINUE READING
-              </p>
-            </div>
-          </div>
-          <div className="border-8 px-4 py-5 space-y-2 rounded text-sm mt-8">
-            <img src={val.image} className="w-48" />
-            <h1 className="font-serif text-blue-600">{val.title}</h1>
+  return (
+    <section className="bg-additional pb-3 md:pb-0">
+      <div className="container mx-auto">
+        <div className="md:p-5">
+          <div className="grid grid-1 md:grid-cols-2 gap-x-3">
+            <section className="px-3 md:w-[900px]">
+              <Blog />
+            </section>
+            {/* recent post */}
+              <section className="w-64 ml-auto hidden md:block">
+                <div className="bg-[#EBD9B4] p-5 mt-3 rounded space-y-2">
+                  <img src={pic} className="w-20 mx-auto rounded-full" />
+                  <p className="text-center text-xl">hai hello vanakam</p>
+                  <p className="text-center text-sm">epdi irukeegaaaaa</p>
+                  <div className="flex justify-center">
+                    <button className="bg-black text-white px-2 py-1 rounded text-xs">
+                      Read More
+                    </button>
+                  </div>
+                </div>
+                <div className="bg-[#EBD9B4] p-5 mt-3 rounded space-y-2">
+                  <img src={pic} className="w-20 mx-auto rounded-full" />
+                  <p className="text-center text-xl">hai hello vanakam</p>
+                  <p className="text-center text-sm">epdi irukeegaaaaa</p>
+                  <div className="flex justify-center">
+                    <button className="bg-black text-white px-2 py-1 rounded text-xs">
+                      Read More
+                    </button>
+                  </div>
+                </div>
+              </section>
           </div>
         </div>
-      </section>
-    );
-  });
-  return dataBase;
+      </div>
+    </section>
+  );
 };
 export default Homepage;
+{
+  /* <section className="container mx-auto max-w-3xl" key={val.id}>
+          <div className="border mt-5">
+            <Link to="/desc">
+              <div className="flex">
+                <div className="p-5 mt-3 rounded md:flex items-center border bg-secondary">
+                  <div className="space-y-5 p-3 text-center">
+                    <img src={val.image} className="w-full md:w-60" />
+                    <p>{val.date}</p>
+                  </div>
+                  <div className="ml-5 p-3 space-y-5">
+                    <h1 className=" text-2xl text-blue-900 font-Viga">
+                      {val.title}
+                    </h1>
+                    <p className="text-lg max-w-3xl font-Viga">{val.news}</p>
+                    <p className="text-sm text-blue-500 font-semibold">
+                      CONTINUE READING
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </section> */
+}
