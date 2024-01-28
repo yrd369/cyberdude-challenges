@@ -1,17 +1,18 @@
 [
   {
     "id": 1,
-    "image": "src/assets/images/anbu.jpg",
-    "title": "React will Start from next Week",
+    "image": "https://akm-img-a-in.tosshub.com/businesstoday/images/story/202401/65b649179f28d-tom-hartley-283635371-16x9.jpg?size=948:533",
+    "title": "Fort Hyderabad Conquered! Ollie Pope, Tom Hartley star in England's sensational win over India in 1st Test.",
     "date": "July 19, 2019",
-    "news": "Food is a very important part of everyone's life. If you want to be healthy, you have to eat healthy. One of the easiest way to do that is to keep your cooking nice and simple."
+    "news": "Ollie Pope and Tom Hartley scripted England's remarkable turnaround and set up a thrilling 28-run victory against India in the opening Test at RGI Stadium on Sunday.",
+    "fullNews": "NEW DELHI: A daddy ton from Ollie Pope was followed by a dream debut spell from Tom Hartley as England stunned India to conquer Fort Hyderabad, winning the thrilling series-opener by 28 runs on Sunday.Playing his maiden Test, left-arm spinner Hartley produced a phenomenal spell of 7 for 62 as he spun England to a sensational victory on the extended penultimate day against India."
   },
-
   {
     "id": 2,
-    "image": "src/assets/images/anbu.jpg",
-    "title": "Node Js starts from Febraury",
+    "image": "https://www.hindustantimes.com/ht-img/img/2024/01/25/550x309/A-contingent-of-Women-Army-Medical-Corps-take-part_1706036664729_1706180235475.jpg",
+    "title": "French President Emmanuel Macron is on a 2-day visit to India as chief guest of the Republic Day parade.",
     "date": "August 19, 2019",
-    "news": "Work is often a major source of stress. People get frustrated, it ruins their relationship with others and it leads to burnout. By keeping your work life as simple as possible, it will help balance everything out."
+    "news": "A contingent of Women Army Medical Corps take part in the full dress rehearsal for the Republic Day Parade 2024, at Kartavya Path, in New Delhi on Tuesday.",
+    "fullNews": "On Friday, the country will celebrate its 75th Republic Day, with January 26 being the date on which the Constitution of India came into effect, in 1950. As always, all eyes will be on the annual Republic Day parade, during which India's military might and cultural diversity is on display."
   }
 ]

@@ -7,7 +7,7 @@ const Blog = () => {
       <Link to={"/post/" + value.id}>
         <div className="md:p-5 mt-3 rounded md:flex items-center bg-secondary">
           <div className=" space-y-1 md:space-y-5 p-3 text-center">
-            <img src={value.image} className="w-32 mx-auto md:mx-0 md:w-36" />
+            <img src={value.image} className="w-full mx-auto md:mx-0 md:w-96" />
             <p className="text-sm">{value.date}</p>
           </div>
           <div className="ml-5 p-3 space-y-5">
