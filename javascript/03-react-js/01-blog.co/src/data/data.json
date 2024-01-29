@@ -14,5 +14,22 @@
     "date": "August 19, 2019",
     "news": "A contingent of Women Army Medical Corps take part in the full dress rehearsal for the Republic Day Parade 2024, at Kartavya Path, in New Delhi on Tuesday.",
     "fullNews": "On Friday, the country will celebrate its 75th Republic Day, with January 26 being the date on which the Constitution of India came into effect, in 1950. As always, all eyes will be on the annual Republic Day parade, during which India's military might and cultural diversity is on display."
+  },
+
+  {
+    "id": 3,
+    "image": "https://media.assettype.com/bloombergquint%2F2024-01%2F69acc873-ddff-4113-a796-9a879c43a3cd%2Fnicholas_cappello_Wb63zqJ5gnE_unsplash.jpg?auto=format%2Ccompress&w=400",
+    "title": "French President Emmanuel Macron is on a 2-day visit to India as chief guest of the Republic Day parade.",
+    "date": "August 19, 2019",
+    "news": "A contingent of Women Army Medical Corps take part in the full dress rehearsal for the Republic Day Parade 2024, at Kartavya Path, in New Delhi on Tuesday.",
+    "fullNews": "On Friday, the country will celebrate its 75th Republic Day, with January 26 being the date on which the Constitution of India came into effect, in 1950. As always, all eyes will be on the annual Republic Day parade, during which India's military might and cultural diversity is on display."
+  },
+  {
+    "id": 4,
+    "image": "src/assets/images/delloite.jpg",
+    "title": "How Deloitte Failed To See Massive $470 Million Scam By Nigerian Firm.",
+    "date": "August 19, 2019",
+    "news": "Regulators in many jurisdictions globally including the US, the UK, China, and India have expressed concerns over Deloitte's auditing practices.",
+    "fullNews": "New Delhi: An international arm of auditing firm Deloitte that had certified a Nigerian company Tingo - accused of fraud by Hindenburg Research - as having over $470 million in its bank had only $50, according to the Securities and Exchange Commission, reports said.The US regulator said it found billions of dollars in fictitious transactions through entities controlled by Dozy Mmobuosi, the founder and former CEO of Tingo.Deloitte had given the fintech a clean, unqualified audit for its 2022 accounts. This discrepancy was discovered when short seller Hindenburg questioned Tingo's accounts, asking whether the firm had missed or rushed through procedures."
   }
 ]

@@ -45,7 +45,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="https://linked.com/in/yogha-raj-dhayal"
+                    href="https://www.linkedin.com/in/yogha-raj-dhayal/"
                     className="hover:underline"
                     target="blank"
                   >
@@ -133,7 +133,7 @@ const Footer = () => {
               <span className="sr-only">Twitter page</span>
             </a>
             <a
-              href="#"
+              href="https://github.com/yrd369"
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
             >
               <svg

@@ -8,11 +8,11 @@ function Descpage() {
     return value.id == id;
   });
   return (
-    <section className="bg-[#eee2d2]">
+    <section className="bg-additional">
       <main className="container max-auto">
         <section className="max-w-96 md:max-w-[800px] w-full text-black mx-auto p-5">
           <div>
-            <div className="border bg-[#f8e0c6] p-3 max-w-2xl">
+            <div className="border bg-white p-5 max-w-2xl rounded">
               <div className="flex justify-center">
                 <img
                   src={selectedValue.image}
@@ -35,9 +35,7 @@ function Descpage() {
                 </div>
 
                 <div className="px-2 ">
-                  <p className="text-gray-800 mt-6">
-                    {selectedValue.fullNews}
-                  </p>
+                  <p className="text-gray-800 mt-6">{selectedValue.fullNews}</p>
                 </div>
               </div>
             </div>
