@@ -1,51 +1,57 @@
-const Education = () => {
+const Education = ({ details }) => {
   return (
     <div className="bg-primary p-10 font-poppins">
       <div className="grid md:grid-cols-2 items-center">
         <div className="md:pl-20 space-y-10">
-          <h1 className="font-bold text-secondary text-5xl">Education</h1>
-          <div className="bg-additional px-5 py-7 flex space-x-3 rounded w-full">
+          <h1 className="font-bold text-secondary text-5xl text-center md:text-start">
+            Education
+          </h1>
+          <div className="bg-additional px-5 py-7 flex space-x-3 rounded w-full items-center hover:bg-orange-700">
             <img
               src="https://dev-portfolio-template.netlify.app/static/media/eduImgWhite.ae822784.svg"
-              className="bg-secondary px-7  rounded-full"
+              className="bg-secondary p-7 py-9  rounded-full"
             />
             <div>
-              <p className="text-secondary font-semibold">2017-2018</p>
+              <p className="text-secondary font-semibold">
+                {details.secondaryEducationYear}
+              </p>
               <p className="text-white font-bold text-xl">
                 Secondary Education
               </p>
               <p className="text-gray-300 text-lg font-semibold">
-                Vivekananda Vidyalaya Matric Higher Secondary School
+                {details.secondaryEducation}
               </p>
             </div>
           </div>
-          <div className="bg-additional px-5 py-7 flex space-x-3 rounded">
+          <div className="bg-additional px-5 py-7 flex space-x-3 rounded w-full items-center hover:bg-orange-700">
             <img
               src="https://dev-portfolio-template.netlify.app/static/media/eduImgWhite.ae822784.svg"
-              className="bg-secondary px-7  rounded-full"
+              className="bg-secondary p-7 py-9  rounded-full"
             />
             <div>
-              <p className="text-secondary font-semibold">2019-2020</p>
+              <p className="text-secondary font-semibold">
+                {details.higherEducationYear}
+              </p>
               <p className="text-white font-bold text-xl">
                 Higher Secondary Education
               </p>
               <p className="text-gray-300 text-lg font-semibold">
-                Vivekananda Vidyalaya Matric Higher Secondary School
+                {details.higherEducation}
               </p>
             </div>
           </div>
-          <div className="bg-additional px-5 py-7 flex space-x-3 rounded">
+          <div className="bg-additional px-5 py-7 flex space-x-3 rounded items-center w-full hover:bg-orange-700">
             <img
               src="https://dev-portfolio-template.netlify.app/static/media/eduImgWhite.ae822784.svg"
-              className="bg-secondary px-7  rounded-full"
+              className="bg-secondary p-7 py-9  rounded-full"
             />
             <div>
-              <p className="text-secondary font-semibold">2020-2023</p>
-              <p className="text-white font-bold text-xl">
-                Bsc Computer technology
+              <p className="text-secondary font-semibold">
+                {details.ugEducationYear}
               </p>
+              <p className="text-white font-bold text-xl">{details.ugDegree}</p>
               <p className="text-gray-300 text-lg font-semibold">
-                Sri Krishna Arts and Science College
+                {details.ugEducation}
               </p>
             </div>
           </div>

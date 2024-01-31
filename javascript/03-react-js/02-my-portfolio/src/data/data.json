@@ -1,0 +1,22 @@
+{
+  "name": "Yogha Raj Dhayal",
+  "role": "Full Stack Developer",
+  "profilePic": "https://avatars.githubusercontent.com/u/136661914?v=4",
+  "quote": " One machine can do the work of fifty ordinary men. No machine can do the work of one extraordinary man. Any sufficiently advancedtechnology is equivalent to magic.",
+  "myStory": "I am Yogha Raj Dhayal. I am a fresher looking for an opportunity to upskill me and contribute for the company. I have a solid foundation in HTML, CSS, Tailwind CSS, JavaScript as well as Github. I developed some projects using these technologies mentioned above. I hope my skills are matched for your requirement.",
+  "secondaryEducationYear": "2017-2018",
+  "secondaryEducation": "Vivekananda Vidyalaya Matric Higher Secondary School",
+  "higherEducationYear": "2019-2020",
+  "higherEducation": "Vivekananda Vidyalaya Matric Higher Secondary School",
+  "ugEducation": "Sri Krishna Arts and Science College",
+  "ugDegree": "Bsc Computer Technology",
+  "ugEducationYear": "2020-2023",
+  "skill": ["HTML", "CSS", "JavaScript", "React Js"],
+  "workExperience": [
+    {
+      "companyName": "CyberDude Networks Pvt Ltd",
+      "experience": "2023-2024",
+      "role": "Junior Full Stack Engineer"
+    }
+  ]
+}
