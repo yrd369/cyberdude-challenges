@@ -26,7 +26,7 @@
   },
   {
     "id": 4,
-    "image": "src/assets/images/delloite.jpg",
+    "image": "/src/assets/images/delloite.jpg",
     "title": "How Deloitte Failed To See Massive $470 Million Scam By Nigerian Firm.",
     "date": "August 19, 2019",
     "news": "Regulators in many jurisdictions globally including the US, the UK, China, and India have expressed concerns over Deloitte's auditing practices.",
