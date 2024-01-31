@@ -6,9 +6,11 @@ export default {
       colors: {
         primary: "#212121",
         secondary: "#F56539",
+        additional: "#613528",
       },
       fontFamily: {
         poppins: "Poppins",
+        cursive: "Cedarville Cursive",
       },
     },
   },

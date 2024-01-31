@@ -1,9 +1,11 @@
-import Hero from "./Hero";
+import { Outlet } from "react-router-dom";
+import Portfolio from "./layouts/Portflio";
 
 function App() {
   return (
     <>
-      <Hero />
+      <Portfolio />
+      <Outlet />
     </>
   );
 }
