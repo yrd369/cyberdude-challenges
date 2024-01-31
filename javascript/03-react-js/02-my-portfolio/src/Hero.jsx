@@ -4,7 +4,6 @@ import { FaInstagram } from "react-icons/fa";
 import App from "./App";
 
 const Hero = ({ details }) => {
-  const blobEl = "http://localhost:5173/file_pdf.pdf";
   return (
     <>
       <div className="grid md:grid-cols-2 relative md:h-screen">
@@ -40,13 +39,9 @@ const Hero = ({ details }) => {
             </p>
             <p className="text-gray-400 font-semibold">{details.quote}</p>
             <div className="md:space-x-5 space-y-3 md:space-y-0">
-              <a
-                download={blobEl}
-                href={blobEl}
-                className="py-2 px-3 border-2 border-secondary rounded-full text-secondary w-full md:w-auto hover:bg-white hover:border-white hover:text-black"
-              >
+              <button className="py-2 px-3 border-2 border-secondary rounded-full text-secondary w-full md:w-auto hover:bg-white hover:border-white hover:text-black">
                 Download CV
-              </a>
+              </button>
               <button className="py-2 px-7 bg-secondary rounded-full w-full md:w-auto hover:bg-black hover:border-2 hover:border-white hover:text-white">
                 Contact
               </button>
