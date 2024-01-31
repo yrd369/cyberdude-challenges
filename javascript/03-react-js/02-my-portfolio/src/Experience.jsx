@@ -7,8 +7,8 @@ const Experience = ({ details }) => {
           className="bg-secondary p-9  rounded-full "
         />
         <div>
-          <p className="text-secondary font-semibold"></p>
-          <p className="text-white font-bold text-xl">{value.experience}</p>
+          <p className="text-secondary font-semibold">{value.experience}</p>
+          <p className="text-white font-bold text-xl">{value.role}</p>
           <p className="text-gray-300 text-lg font-semibold">
             {value.companyName}
           </p>
