@@ -4,11 +4,11 @@ const Blog = () => {
   const blogData = data.map((value) => {
     return (
       <div
-        className="md:p-5 mt-3 rounded md:flex items-center bg-secondary"
+        className="md:p-5 mt-3 rounded md:grid grid-cols-2 items-center bg-secondary"
         key={value.id}
       >
         <div className=" space-y-1 md:space-y-5 p-3 text-center">
-          <img src={value.image} className="w-full mx-auto md:mx-0 md:w-96" />
+          <img src={value.image} className=" mx-auto md:mx-0 md:w-96" />
           <p className="text-sm">{value.date}</p>
         </div>
         <div className="ml-5 p-3 space-y-5">

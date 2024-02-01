@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
-    <div className="bg-primary text-white md:flex items-center justify-center md:justify-between p-5 px-8">
+    <div className="bg-primary text-white md:flex items-center justify-center md:justify-between p-5 px-14">
       <div>
         <Link to={"/"}>
           <h1 className="font-semibold font-Viga text-center mb-5 md:mb-0 hover:text-gray-300">
