@@ -1,4 +1,3 @@
-import Chatpage from "../Chatpage";
 import Inputcard from "../Inputcard";
 
 const Layout = () => {
