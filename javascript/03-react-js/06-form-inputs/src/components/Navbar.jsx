@@ -7,7 +7,10 @@ const Navbar = () => {
         </a>
       </div>
       <ul>
-        <a href="https://github.com/yrd369">
+        <a
+          href="https://github.com/yrd369/cyberdude-challenges/tree/master/javascript/03-react-js/06-form-inputs"
+          target="blank"
+        >
           <li>Github</li>
         </a>
       </ul>

@@ -1,4 +1,4 @@
-const Textarea = ({ label, id, handleChange, name, type, placeholder }) => {
+const Textarea = ({ label, id, handleChange, name, type, placeholder,register,error }) => {
   return (
     <div>
       <label className="block mb-1 text-white" htmlFor={id}>
@@ -11,7 +11,9 @@ const Textarea = ({ label, id, handleChange, name, type, placeholder }) => {
         name={name}
         type={type}
         placeholder={placeholder}
+        {...register}
       />
+      {error && <small className="font-mono font-medium text-red-500">{error.message}</small>}
     </div>
   );
 };
