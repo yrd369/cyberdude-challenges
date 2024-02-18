@@ -1,0 +1,16 @@
+{
+  "name": "01-file-system",
+  "version": "1.0.0",
+  "description": "popular places in popular cities -fs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "js",
+    "filesystem"
+  ],
+  "author": "https://github.com/yrd369",
+  "license": "MIT"
+}

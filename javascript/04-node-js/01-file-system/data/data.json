@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "cityName": "Rameswaram",
+    "popularPlaces": [
+      {
+        "place": "Arulmigu Ramanathaswamy temple",
+        "desc": "Ramanathaswamy Temple is a Hindu temple dedicated to the Hindu god Shiva located on Rameswaram island in the state of Tamil Nadu, India. It is also one of the twelve Jyotirlinga temples. It is one of the 275 Paadal Petra Sthalams, where Nayanars (Saivite saints), Appar, Sundarar and Tirugnana Sambandar, have glorified the temple with their songs. The temple was expanded during the 12th century by the Pandya Dynasty, and its principal shrine’s sanctum was renovated by Jeyaveera Cinkaiariyan and his successor Gunaveera Cinkaiariyan, monarchs of the Jaffna kingdom. The temple has the longest corridor among all Hindu temples in India. It was built by King Muthuramalinga Sethupathiy.[1][2] The temple, located in Rameswaram, is considered a holy pilgrimage site for Shaivites, Vaishnavites and Smarthas. Mythological accounts depict the presiding deity, the Lingam of Ramanathaswamy (Shiva), as having been established and worshiped by Rama, before he crossed his bridge to the present-day island of Sri Lanka. It is one of the Char Dham pilgrimage sites."
+      },
+      {
+        "place": "Dhanushkodi",
+        "desc": "Dhanushkodi is an abandoned town at the south-eastern tip of Pamban Island of the state of Tamil Nadu in India. It is south-east of Pamban and is about 24 kilometres (15 mi) west of Talaimannar in Sri Lanka. The town was destroyed during the 1964 Rameswaram cyclone and remains uninhabited in the aftermath. Although devoid of inhabitants, Dhanushkodi remains a tourist attraction due to its historical and mythological relevance.A metre gauge railway line connected Mandapam on mainland India to Dhanushkodi.Boat mail express ran from Chennai Egmore to Dhanushkodi till 1964 when the metre-gauge branch line from Pamban to Dhanushkodi was destroyed during the 1964 Dhanushkodi cyclone. In 2003, Southern Railway sent a project report to Ministry of Railways for re-laying a 16 kilometres (9.9 mi) railway line to Dhanushkodi from Rameswaram. The planning commission looked into the possibility of a new railway line between Dhanushkodi and Rameswaram in 2010"
+      },
+      {
+        "place": "Dr. A.P.J. Abdul Kalam Memorials",
+        "desc": "The \"Dr. A. P. J. Abdul Kalam National Memorial\" is a mausoleum in memory of A. P. J. Abdul Kalam (1931–2015), the 11th President of India (2002-2007), located in his home town, Rameswaram, Tamil Nadu, India. The memorial was designed and constructed by Defence Research and Development Organisation (DRDO) as a tribute to Kalam and to display the cultural heritage and ethnic diversity of India. It was officially inaugurated by Prime Minister Narendra Modi in July 2017. A symbol of national integration, the memorial is an amalgamation of Mughal and Indian architecture."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "cityName": "Madurai",
+    "popularPlaces": [
+      {
+        "place": "Meenakshi amman temple",
+        "desc": "Arulmigu Meenakshi Sundareswarar Temple a.k.a Arulmigu Meenakshi Amman Thirukkovil is a historic Hindu temple located on the southern bank of the Vaigai River in the temple city of Madurai, Tamil Nadu, India. It is dedicated to the goddess Meenakshi, a form of Shakti, and her consort, Sundareshwarar, a form of Shiva. The temple is at the centre of the ancient temple city of Madurai mentioned in the Tamil Sangam literature, with the goddess temple mentioned in 6th-century CE texts. This temple is one of the Paadal Petra Sthalams, which are 275 temples of Shiva that are revered in the verses of Tamil Saiva Nayanars of the 6th-9th century CE.The west tower (gopuram) of the temple is the model based on which the Tamil Nadu State Emblem is designed"
+      },
+      {
+        "place": "Alagar Kovil",
+        "desc": "Alagar Kovil is a village in Madurai district in the South Indian state of Tamil Nadu. The history and living of the village is centered around Kallalagar Temple. Constructed in the Dravidian style of architecture, the temple is glorified in the Nalayira Divya Prabandham, the early medieval Tamil canon of the Alvar saints from the 6th–9th centuries CE. It is one of the 108 Divya Desams dedicated to Vishnu, who is worshiped as Kallalagar and his consort Lakshmi as Tirumamagal."
+      },
+      {
+        "place": "Pazhamudircholai",
+        "desc":"The Arulmigu Solaimalai Murugan Temple is a Hindu temple, located about 25 kilometres north of Madurai, atop a hill covered with dense forests. One of the six important abodes of the deity Murugan located in Tamil Nadu, it is close to the Vishnu temple of Alagar Kovil.The temple is maintained and administered by the Hindu Religious and Charitable Endowments Department of the Government of Tamil Nadu."
+      }
+    ]
+  },
+  {
+    "id":3,
+    "cityName":"Coimbatore",
+    "popularPlaces":[
+        {
+            "place":"Vellingiri Hill Temple",
+            "desc":"Velliangiri is a place located in the Western Ghats of the western border of the district Coimbatore in Tamil Nadu. The area at the foot of this hill Velliangiri is called as Poondi. There is a beautiful temple at this place Poondi, which is facing east with the shrines of Poondi Ganesha, Lord Velliangiri and the Goddess Manonmani. Recently, a 4 1/2 feet tall ivory statue of Nataraja and a statue of 63 Shiva Devotees were consecrated."
+        },
+        {
+            "place":"Adiyogi",
+            "desc":"Adiyogi is located at the Isha Yoga Centre. Its height, 112 ft, symbolizes the 112 possibilities to attain to moksha (liberation) that are mentioned in yogic culture, and also the 112 chakras in the human system. A linga named Yogeshwar Linga was consecrated and placed in front of the statue. The Indian Ministry of Tourism has included the statue in its official Incredible India tourism campaign.It is also the venue of a light and sound show about Shiva as a yogi, inaugurated by the President of India, Ram Nath Kovind."
+        }
+    ]
+  }
+]
