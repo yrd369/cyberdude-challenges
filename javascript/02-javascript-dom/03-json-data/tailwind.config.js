@@ -4,8 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        logo: "Kavoon",
-        navbar: "Joti One",
+        poppins: ["Poppins", "sans-serif"],
       },
     },
   },
