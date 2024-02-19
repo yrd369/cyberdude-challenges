@@ -11,13 +11,17 @@ function App() {
     }
     api();
   }, []);
-  
+
   return (
     <>
       <Navbar />
-      {interns.map((intern) => {
-        return <Cards name={intern.name} key={intern.id}/>;
-      })}
+      <div className="grid grid-cols-3 gap-5 m-10">
+        {interns.map((intern) => {
+          return (
+            <Cards name={intern.name} gender={intern.gender} nationality={intern.country} key={intern.id} />
+          );
+        })}
+      </div>
     </>
   );
 }
