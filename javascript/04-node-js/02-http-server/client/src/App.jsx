@@ -1,5 +1,25 @@
+import { useEffect, useState } from "react";
+import Navbar from "./components/Navbar";
+import Cards from "./components/Cards";
 function App() {
-  return <><p className="bg-yellow-300">React is Working with tailwindcss</p></>;
+  const [interns, setInterns] = useState([]);
+  useEffect(() => {
+    async function api() {
+      const api = await fetch("/api");
+      const data = await api.json();
+      setInterns(data);
+    }
+    api();
+  }, []);
+  
+  return (
+    <>
+      <Navbar />
+      {interns.map((intern) => {
+        return <Cards name={intern.name} key={intern.id}/>;
+      })}
+    </>
+  );
 }
 
 export default App;
