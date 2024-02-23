@@ -4,6 +4,7 @@ import Input from "../components/Input";
 import Hero from "../components/Hero";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase/index.js";
+import { Link } from "react-router-dom";
 function Homepage() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState("");
@@ -17,24 +18,30 @@ function Homepage() {
   return (
     <>
       <Hero />
-      <Input input={(e) => setSearch(e.target.value)} name="input" />
-      <div className="space-y-5 grid grid-cols-5 gap-x-5 mx-auto container ">
-        {data
-          .filter((item) => {
-            return search.toLowerCase() === ""
-              ? item.data()
-              : item.data().type.toLowerCase().includes(search) ||
-                  item.data().recipeName.toLowerCase().includes(search);
-          })
-          .map((card, index) => {
-            return (
-              <Card
-                name={card.data().recipeName}
-                key={index}
-                img={card.data().img}
-              />
-            );
-          })}
+      <div className="container">
+        <div className="flex items-center px-20 justify-between">
+          <h1 className="text-2xl font-semibold tracking-tight">Recipes</h1>
+          <Input input={(e) => setSearch(e.target.value)} name="input" />
+        </div>
+        <div className=" grid md:grid-cols-4 gap-x-6 mx-auto px-20 items-center">
+          {data
+            .filter((item) => {
+              return search.toLowerCase() === ""
+                ? item.data()
+                : item.data().recipeType.toLowerCase().includes(search) ||
+                    item.data().recipeName.toLowerCase().includes(search);
+            })
+            .map((card, index) => {
+              return (
+                <Link to={"/recipe/" + card.data().recipeName} key={index}>
+                  <Card
+                    name={card.data().recipeName}
+                    img={card.data().recipeImage}
+                  />
+                </Link>
+              );
+            })}
+        </div>
       </div>
     </>
   );

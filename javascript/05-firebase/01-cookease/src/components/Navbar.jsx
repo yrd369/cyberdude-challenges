@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
-    <div className="flex justify-between  items-center container mx-auto p-5">
+    <div className="md:flex md:justify-between  items-center container mx-auto p-5">
       <Link to={"/"}>
-        <h1 className="text-xl font-bold tracking-tight ">CookEase</h1>
+        <h1 className="text-xl font-semibold tracking-tight ">CookEase</h1>
       </Link>
-      <ul className="flex space-x-3 items-center">
+      <ul className="md:flex space-x-3 items-center">
         <Link to={"/home"}>
           <li>Home</li>
         </Link>
