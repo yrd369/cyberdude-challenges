@@ -6,14 +6,15 @@ import { FiEdit } from "react-icons/fi";
 import { MdDelete } from "react-icons/md";
 import { MdArrowBackIosNew } from "react-icons/md";
 import { useForm } from "react-hook-form";
-import { doc, deleteDoc } from "firebase/firestore";
+import { doc, deleteDoc, updateDoc } from "firebase/firestore";
+import { IoCloseSharp } from "react-icons/io5";
+
 const Descpage = () => {
   const { register, handleSubmit } = useForm();
-  const handleEdit = () => {
-    document.getElementById("editForm").style.display = "block";
-  };
   const [value, setValue] = useState([]);
   const { id } = useParams();
+
+  // getting data from database
   useEffect(() => {
     async function getData() {
       const querySnapshot = await getDocs(collection(db, "recipes"));
@@ -25,19 +26,37 @@ const Descpage = () => {
     }
     getData();
   }, []);
+
+  // getting clicked card
   const cardValue = value.find((card) => {
     return card.recipeName === id;
   });
-  const getData = (data) => {
-    // console.log(data);
-    alert("Edit Succeed!");
-  };
+
+  // delete file
   const handleDel = () => {
     const deleteFucntion = async () => {
       await deleteDoc(doc(db, "recipes", id));
-      alert("File deleted")
+      alert("File deleted");
     };
     deleteFucntion();
+  };
+
+  // edit file
+  const handleEdit = () => {
+    document.getElementById("editForm").style.display = "block";
+  };
+  const closeEditForm = () => {
+    document.getElementById("editForm").style.display = "";
+  };
+  const getData = (data) => {
+    async function editData() {
+      const foodRef = updateDoc(doc(db, "recipes", "Mutton biryani"));
+      await updateDoc(foodRef, {
+        recipeName: "hai",
+      });
+    }
+    editData();
+    console.log(data.recipeName);
   };
   console.log(cardValue);
 
@@ -56,7 +75,10 @@ const Descpage = () => {
               className="text-gray-700 cursor-pointer"
               onClick={handleEdit}
             />
-            <MdDelete className="text-red-500" onClick={handleDel} />
+            <MdDelete
+              className="text-red-500 cursor-pointer"
+              onClick={handleDel}
+            />
           </div>
         </div>
         <div className="md:flex justify-between items-center">
@@ -72,45 +94,51 @@ const Descpage = () => {
             a further 10 minutes.
           </p>
           <form
-            className="bg-[#fff] p-10 max-w-2xl mx-auto rounded-lg mt-5 space-y-3 absolute right-20 top-10 hidden"
+            className="bg-[#fff] max-w-2xl mx-auto rounded-lg mt-5 absolute right-20 top-10 hidden"
             id="editForm"
             onSubmit={handleSubmit(getData)}
           >
-            <div>
-              <label className="block mb-1.5">Recipe name</label>
-              <input
-                type="text "
-                className="outline-none px-4 py-1 rounded-md w-full bg-gray-100"
-                name="recipeName"
-                placeholder="Enter your recipe name"
-                {...register("recipeName", {
-                  required: "recipeName",
-                })}
-              />
+            <IoCloseSharp
+              className="text-2xl text-red-500 mt-3 ml-64 cursor-pointer"
+              onClick={closeEditForm}
+            />
+            <div className="p-7 space-y-3">
+              <div>
+                <label className="block mb-1.5">Recipe name</label>
+                <input
+                  type="text "
+                  className="outline-none px-4 py-1 rounded-md w-full bg-gray-100"
+                  name="recipeName"
+                  placeholder="Enter your recipe name"
+                  {...register("recipeName", {
+                    required: "recipeName",
+                  })}
+                />
+              </div>
+              <div>
+                <label className="block mb-1.5">Recipe type</label>
+                <input
+                  type="text"
+                  name="recipeType"
+                  className="px-4 py-1 rounded-md outline-none w-full bg-gray-100"
+                  {...register("recipeType")}
+                  placeholder="Ex: chicken, egg, mutton"
+                />
+              </div>
+              <div>
+                <label className="block mb-1.5">Recipe image</label>
+                <input
+                  name="recipeImage"
+                  type="url"
+                  className="px-4 py-1 rounded-md outline-none w-full bg-gray-100"
+                  placeholder="Paste your image link"
+                  {...register("recipeImage")}
+                />
+              </div>
+              <button className="bg-gray-950 px-4 py-1 rounded-lg text-white w-full">
+                Edit recipe
+              </button>
             </div>
-            <div>
-              <label className="block mb-1.5">Recipe type</label>
-              <input
-                type="text"
-                name="recipeType"
-                className="px-4 py-1 rounded-md outline-none w-full bg-gray-100"
-                {...register("recipeType")}
-                placeholder="Ex: chicken, egg, mutton"
-              />
-            </div>
-            <div>
-              <label className="block mb-1.5">Recipe image</label>
-              <input
-                name="recipeImage"
-                type="url"
-                className="px-4 py-1 rounded-md outline-none w-full bg-gray-100"
-                placeholder="Paste your image link"
-                {...register("recipeImage")}
-              />
-            </div>
-            <button className="bg-gray-950 px-4 py-1 rounded-lg text-white w-full">
-              Edit recipe
-            </button>
           </form>
         </div>
       </div>
