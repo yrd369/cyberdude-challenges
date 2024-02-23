@@ -6,6 +6,7 @@ import { FiEdit } from "react-icons/fi";
 import { MdDelete } from "react-icons/md";
 import { MdArrowBackIosNew } from "react-icons/md";
 import { useForm } from "react-hook-form";
+import { doc, deleteDoc } from "firebase/firestore";
 const Descpage = () => {
   const { register, handleSubmit } = useForm();
   const handleEdit = () => {
@@ -31,6 +32,13 @@ const Descpage = () => {
     // console.log(data);
     alert("Edit Succeed!");
   };
+  const handleDel = () => {
+    const deleteFucntion = async () => {
+      await deleteDoc(doc(db, "recipes", id));
+      alert("File deleted")
+    };
+    deleteFucntion();
+  };
   console.log(cardValue);
 
   return (
@@ -41,19 +49,19 @@ const Descpage = () => {
             <MdArrowBackIosNew className="text-xl" />
           </Link>
           <h1 className="text-2xl font-semibold tracking-tight">
-            {cardValue.recipeName}
+            Egg Sandwich
           </h1>
-          <div className="flex items-center space-x-1.5 text-xl">
+          <div className="flex items-center space-x-2 text-2xl">
             <FiEdit
               className="text-gray-700 cursor-pointer"
               onClick={handleEdit}
             />
-            <MdDelete className="text-red-500" />
+            <MdDelete className="text-red-500" onClick={handleDel} />
           </div>
         </div>
         <div className="md:flex justify-between items-center">
           <img
-            src={cardValue.recipeImage}
+            src="https://c.ndtvimg.com/2020-07/3cqv032o_omelette_625x300_23_July_20.jpg"
             className="rounded-xl w-[500px]"
           />
           <p className="tracking-wide max-w-md items-center">
