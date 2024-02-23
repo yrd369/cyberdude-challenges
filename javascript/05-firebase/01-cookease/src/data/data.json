@@ -1,0 +1,25 @@
+[
+  {
+    "id": 1,
+    "recipeName": "Uttapam",
+    "type": "dosa",
+    "img": "https://t3.ftcdn.net/jpg/01/15/66/52/360_F_115665272_xRBFr4hHgVUFfdjMAGQpbAAPgTsHJpr6.jpg"
+  },
+
+  {
+    "id": 2,
+    "recipeName": "Fish Curry",
+    "type": "fish"
+  },
+  {
+    "id": 3,
+    "recipeName": "Veg Briyani",
+    "type": "veg"
+  },
+  {
+    "id": 4,
+    "recipeName": "Egg sandwich",
+    "type": "egg",
+    "img": "https://c.ndtvimg.com/2020-07/3cqv032o_omelette_625x300_23_July_20.jpg"
+  }
+]
