@@ -36,7 +36,7 @@ const Descpage = () => {
   const handleDel = () => {
     const deleteFucntion = async () => {
       await deleteDoc(doc(db, "recipes", id));
-      alert("File deleted");
+      alert(`${id} recipe deleted. 🗑️`);
     };
     deleteFucntion();
   };
@@ -50,9 +50,10 @@ const Descpage = () => {
   };
   const getData = (data) => {
     async function editData() {
-      const foodRef = updateDoc(doc(db, "recipes", "Mutton biryani"));
+      const foodRef = updateDoc(doc(db, "recipes", id));
       await updateDoc(foodRef, {
-        recipeName: "hai",
+        ...id,
+        recipeName: data.recipeName,
       });
     }
     editData();
@@ -61,7 +62,7 @@ const Descpage = () => {
   console.log(cardValue);
 
   return (
-    <div className="bg-[#FBE1DD] p-5 max-w-6xl mx-auto mt-10 md:h-screen rounded-xl relative">
+    <div className="bg-[#FBE1DD] p-5 max-w-6xl md:mx-auto mx-10 mt-10 md:h-screen rounded-xl relative">
       <div className="mt-5 space-y-3">
         <div className="flex justify-between items-center mb-10">
           <Link to="/home">
@@ -81,7 +82,7 @@ const Descpage = () => {
             />
           </div>
         </div>
-        <div className="md:flex justify-between items-center">
+        <div className="md:flex justify-between items-center space-y-3 md:space-y-0">
           <img
             src="https://c.ndtvimg.com/2020-07/3cqv032o_omelette_625x300_23_July_20.jpg"
             className="rounded-xl w-[500px]"

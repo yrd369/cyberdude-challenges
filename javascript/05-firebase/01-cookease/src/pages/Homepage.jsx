@@ -19,7 +19,7 @@ function Homepage() {
     <>
       <Hero />
       <div className="container">
-        <div className="flex items-center px-20 justify-between">
+        <div className="md:flex items-center md:px-20 md:justify-between">
           <h1 className="text-2xl font-semibold tracking-tight">Recipes</h1>
           <Input input={(e) => setSearch(e.target.value)} name="input" />
         </div>

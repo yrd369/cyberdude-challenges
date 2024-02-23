@@ -3,10 +3,11 @@ import { db } from "../firebase/index";
 import { setDoc, doc } from "firebase/firestore";
 const Recipe = () => {
   const { register, handleSubmit } = useForm();
+
+  // adding a new data
   const sendData = (data) => {
     const querySnapshot = setDoc(doc(db, "recipes", data.recipeName), data);
-    alert(`Thank you for sharing your ${data.recipeName} recipe.`);
-    console.log(querySnapshot);
+    alert(`Thank you for sharing your ${data.recipeName} recipe. ✅`);
   };
 
   return (
