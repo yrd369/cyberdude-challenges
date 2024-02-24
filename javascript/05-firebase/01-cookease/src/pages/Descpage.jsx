@@ -11,17 +11,16 @@ import { IoCloseSharp } from "react-icons/io5";
 
 const Descpage = () => {
   const { register, handleSubmit } = useForm({ defaultValues: {} });
-  const [value, setValue] = useState("");
+  const [data, setData] = useState("");
   const { id } = useParams();
 
-  // getting data from database
+  // getting data
   useEffect(() => {
-    async function getRecipes() {
+    async function getRecipe() {
       const querySnapshot = await getDoc(doc(db, "recipes", id));
-      setValue(querySnapshot.data());
-      console.log(querySnapshot.data());
+      setData(querySnapshot.data());
     }
-    getRecipes();
+    getRecipe();
   }, []);
 
   // delete file
@@ -58,20 +57,21 @@ const Descpage = () => {
         recipeType: value.recipeType,
         recipeImage: value.recipeImage,
       });
+      alert(`Edit succeed !`)
     };
     updateData();
   };
   // console.log(cardValue);
 
   return (
-    <div className="bg-[#FBE1DD] p-5 max-w-6xl md:mx-auto mx-10 mt-10 md:h-screen rounded-xl relative">
+    <div className="bg-[#FBE1DD] p-5 max-w-6xl md:mx-auto mx-10 mt-10 rounded-xl relative">
       <div className="mt-5 space-y-3">
-        <div className="flex justify-between items-center mb-10">
+        <div className="flex justify-between items-center mb-7">
           <Link to="/home">
             <MdArrowBackIosNew className="text-xl" />
           </Link>
           <h1 className="text-2xl font-semibold tracking-tight">
-            {value.recipeName}
+            {data.recipeName}
           </h1>
           <div className="flex items-center space-x-2 text-2xl">
             <FiEdit
@@ -85,13 +85,9 @@ const Descpage = () => {
           </div>
         </div>
         <div className="md:flex justify-between items-center space-y-3 md:space-y-0">
-          <img src={value.recipeImage} className="rounded-xl w-[500px]" />
+          <img src={data.recipeImage} className="rounded-xl w-[500px]" />
           <p className="tracking-wide max-w-md items-center">
-            Put the boiling water in a saucepan, add the washed rice, boil for 5
-            minutes and drain. Layer the chicken mixture with the rice starting
-            with the rice then the chicken mixture and repeat this twice.
-            Garnish with cumin seeds, and ginger. Lower the heat and simmer for
-            a further 10 minutes.
+          {data.procedure}
           </p>
           <form
             className="bg-[#fff] max-w-2xl mx-auto rounded-lg mt-5 absolute right-20 top-10 hidden"
@@ -135,6 +131,12 @@ const Descpage = () => {
                   {...register("recipeImage")}
                 />
               </div>
+              <input
+                name="recipeId"
+                type="hidden"
+                {...register("id")}
+                value={id}
+              />
               <button className="bg-gray-950 px-4 py-1 rounded-lg text-white w-full">
                 Edit recipe
               </button>
