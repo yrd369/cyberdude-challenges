@@ -9,17 +9,19 @@
   {
     "id": 2,
     "recipeName": "Fish Curry",
-    "type": "fish"
+    "type": "fish",
+    "img":"https://www.thedeliciouscrescent.com/wp-content/uploads/2023/07/Fish-Curry-4.jpg"
   },
   {
     "id": 3,
     "recipeName": "Veg Briyani",
-    "type": "veg"
+    "type": "veg",
+    "img":"https://madhurasrecipe.com/wp-content/uploads/2023/03/Veg-Biryani-Featured.jpg"
   },
   {
     "id": 4,
     "recipeName": "Egg sandwich",
     "type": "egg",
-    "img": "https://c.ndtvimg.com/2020-07/3cqv032o_omelette_625x300_23_July_20.jpg"
+    "img": "https://staticcookist.akamaized.net/wp-content/uploads/sites/22/2021/12/egg1-1200x675.jpg"
   }
 ]

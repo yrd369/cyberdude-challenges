@@ -1,5 +1,5 @@
-import { Link, useParams } from "react-router-dom";
-import { collection, getDocs } from "firebase/firestore";
+import { Link, Navigate, useParams } from "react-router-dom";
+import { collection, getDocs, getDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { db } from "../firebase";
 import { FiEdit } from "react-icons/fi";
@@ -10,33 +10,26 @@ import { doc, deleteDoc, updateDoc } from "firebase/firestore";
 import { IoCloseSharp } from "react-icons/io5";
 
 const Descpage = () => {
-  const { register, handleSubmit } = useForm();
-  const [value, setValue] = useState([]);
+  const { register, handleSubmit } = useForm({ defaultValues: {} });
+  const [value, setValue] = useState("");
   const { id } = useParams();
 
   // getting data from database
   useEffect(() => {
-    async function getData() {
-      const querySnapshot = await getDocs(collection(db, "recipes"));
-      setValue(
-        querySnapshot.docs.map((val) => {
-          return val.data();
-        })
-      );
+    async function getRecipes() {
+      const querySnapshot = await getDoc(doc(db, "recipes", id));
+      setValue(querySnapshot.data());
+      console.log(querySnapshot.data());
     }
-    getData();
+    getRecipes();
   }, []);
-
-  // getting clicked card
-  const cardValue = value.find((card) => {
-    return card.recipeName === id;
-  });
 
   // delete file
   const handleDel = () => {
     const deleteFucntion = async () => {
       await deleteDoc(doc(db, "recipes", id));
       alert(`${id} recipe deleted. 🗑️`);
+      Navigate("/home");
     };
     deleteFucntion();
   };
@@ -48,18 +41,27 @@ const Descpage = () => {
   const closeEditForm = () => {
     document.getElementById("editForm").style.display = "";
   };
-  const getData = (data) => {
-    async function editData() {
-      const foodRef = updateDoc(doc(db, "recipes", id));
-      await updateDoc(foodRef, {
-        ...id,
-        recipeName: data.recipeName,
+  // const getData = (data) => {
+  //   async function editData() {
+  //     const foodRef = updateDoc(doc(db, "recipes", "55euZzMViskBTRozgKkY"));
+  //     await updateDoc(foodRef, { recipeName: "thayir" });
+  //   }
+  //   editData();
+  //   console.log(data);
+  // };
+  const updateInfoToDB = (value) => {
+    const updateData = async () => {
+      const updateRef = doc(db, "recipes", id);
+      await updateDoc(updateRef, {
+        ...value,
+        recipeName: value.recipeName,
+        recipeType: value.recipeType,
+        recipeImage: value.recipeImage,
       });
-    }
-    editData();
-    console.log(data.recipeName);
+    };
+    updateData();
   };
-  console.log(cardValue);
+  // console.log(cardValue);
 
   return (
     <div className="bg-[#FBE1DD] p-5 max-w-6xl md:mx-auto mx-10 mt-10 md:h-screen rounded-xl relative">
@@ -69,7 +71,7 @@ const Descpage = () => {
             <MdArrowBackIosNew className="text-xl" />
           </Link>
           <h1 className="text-2xl font-semibold tracking-tight">
-            Egg Sandwich
+            {value.recipeName}
           </h1>
           <div className="flex items-center space-x-2 text-2xl">
             <FiEdit
@@ -83,10 +85,7 @@ const Descpage = () => {
           </div>
         </div>
         <div className="md:flex justify-between items-center space-y-3 md:space-y-0">
-          <img
-            src="https://c.ndtvimg.com/2020-07/3cqv032o_omelette_625x300_23_July_20.jpg"
-            className="rounded-xl w-[500px]"
-          />
+          <img src={value.recipeImage} className="rounded-xl w-[500px]" />
           <p className="tracking-wide max-w-md items-center">
             Put the boiling water in a saucepan, add the washed rice, boil for 5
             minutes and drain. Layer the chicken mixture with the rice starting
@@ -97,7 +96,7 @@ const Descpage = () => {
           <form
             className="bg-[#fff] max-w-2xl mx-auto rounded-lg mt-5 absolute right-20 top-10 hidden"
             id="editForm"
-            onSubmit={handleSubmit(getData)}
+            onSubmit={handleSubmit(updateInfoToDB)}
           >
             <IoCloseSharp
               className="text-2xl text-red-500 mt-3 ml-64 cursor-pointer"
