@@ -3,17 +3,25 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="icon" type="image/png"
+    href="https://store-images.s-microsoft.com/image/apps.30134.14558665752799575.204bcbbd-ff57-4660-afc3-403ad2cf9501.eab5f81f-3a23-462c-a19b-1785c5d9a1d8"
+    class="rounded-full" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>YT thumbnail grabber</title>
   <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 
 <body class="bg-[#332941]">
-  <form class="max-w-lg mx-auto bg-[#F8E559] mt-10 px-5 py-10 space-y-2 rounded-lg shadow-xl mb-5" id="form">
-    <label class="block">Paste your link here</label>
-    <input type="url" class="w-full outline-none px-2 py-1 rounded" id="link">
-    <button class="bg-[#864AF9] text-white px-3 py-1 rounded w-full text-center">Grab thumbnail</button>
+
+  <form class="mx-auto h-screen flex justify-center items-center flex-col px-5 py-10 space-y-2 rounded-lg mb-5"
+    id="form">
+    <h1 class="text-2xl text-[#ec4899] font-black mb-5">Youtube Thumbnail Grabber</h1>
+    <div class="md:flex space-x-3 space-y-3 md:space-y-0 text-center md:text-left">
+      <input type="url" class="w-96 outline-none px-4 py-1 rounded bg-gray-200" id="link"
+        placeholder="Paste your video link here..">
+      <button class="bg-[#ec4899] text-white px-3 py-1 rounded w-40 text-center font-semibold">Grab
+        thumbnail</button>
+    </div>
   </form>
   <img class="mx-auto w-96" id="img">
   <script type="module" src="./assets/js/main.js"></script>
