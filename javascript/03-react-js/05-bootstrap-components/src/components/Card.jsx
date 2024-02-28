@@ -1,4 +1,5 @@
 const Card = (props) => {
+  console.log(props);
   return (
     <div className="bg-gray-200  max-w-72 rounded">
       <img
@@ -14,12 +15,11 @@ const Card = (props) => {
             ? props.children
             : "Some quick example text to build on the card title and make up the bulk of the card's content."}
         </p>
-        <button
-          className="bg-blue-500 text-white px-4 py-1 rounded w-full"
-          href={props.href}
-        >
-          Go Somewhere
-        </button>
+        <a href={props.href}>
+          <button className="bg-blue-500 text-white px-4 py-1 rounded w-full">
+            Go Somewhere
+          </button>
+        </a>
       </div>
     </div>
   );
