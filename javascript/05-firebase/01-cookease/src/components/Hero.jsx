@@ -1,6 +1,6 @@
 const Hero = () => {
   return (
-    <div className="bg-[#FBE1DD] md:container md:mx-auto mx-10 rounded-xl mt-2 mb-8 md:flex p-5  md:justify-between items-center  px-28">
+    <div className="bg-[#FBE1DD] md:container md:mx-auto mx-8 rounded-xl mt-2 mb-8 md:flex p-5  md:justify-between items-center  px-28">
       <div>
         <h1 className="text-3xl font-semibold mb-2 track-tight text-center">
           CookEase

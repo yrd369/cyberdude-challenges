@@ -1,17 +1,20 @@
 import { useForm } from "react-hook-form";
 import { db } from "../firebase/index";
 import { setDoc, doc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 const Recipe = () => {
   const { register, handleSubmit } = useForm();
+  const navigate = useNavigate();
 
   // adding a new data
   const sendData = (data) => {
     const querySnapshot = setDoc(doc(db, "recipes", data.recipeName), data);
     alert(`Thank you for sharing your ${data.recipeName} recipe. ✅`);
+    navigate("/home");
   };
 
   return (
-    <div className="h-screen">
+    <div className="p-5">
       <form
         className="bg-[#FBE1DD] p-10 max-w-2xl mx-auto rounded-lg mt-5 space-y-3"
         onSubmit={handleSubmit(sendData)}

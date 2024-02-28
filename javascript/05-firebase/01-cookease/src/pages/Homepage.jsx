@@ -4,8 +4,9 @@ import Input from "../components/Input";
 import Hero from "../components/Hero";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase/index.js";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 function Homepage() {
+  const navigate = useNavigate();
   const [data, setData] = useState([]);
   const [search, setSearch] = useState("");
   useEffect(() => {
@@ -18,9 +19,9 @@ function Homepage() {
   return (
     <>
       <Hero />
-      <div className="container">
+      <div className="container md:h-screen">
         <div className="md:flex items-center md:px-20 md:justify-between">
-          <h1 className="text-2xl font-semibold tracking-tight">Recipes</h1>
+          <h1 className="text-2xl font-semibold tracking-tight text-center md:text-left">Recipes</h1>
           <Input input={(e) => setSearch(e.target.value)} name="input" />
         </div>
         <div className=" grid md:grid-cols-4 gap-x-6 mx-auto px-20 items-center">
@@ -33,7 +34,7 @@ function Homepage() {
             })
             .map((card, index) => {
               return (
-                <Link to={"/recipe/" + card.data().recipeName} key={index}>
+                <Link to={"/recipe/" + card.id} key={index}>
                   <Card
                     name={card.data().recipeName}
                     img={card.data().recipeImage}
